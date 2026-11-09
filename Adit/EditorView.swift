@@ -51,7 +51,11 @@ struct EditorView: View {
   @FocusState private var promptFocused: Bool
   let onExit: () -> Void, onPublish: (Artwork) -> Void
   init(initial: Artwork, onExit: @escaping () -> Void, onPublish: @escaping (Artwork) -> Void) {
-    _art = State(initialValue: initial)
+    var aligned = initial
+    if let size = UIImage(named: initial.base)?.size, size.height > 0 {
+      aligned.ratio = size.width / size.height
+    }
+    _art = State(initialValue: aligned)
     self.onExit = onExit
     self.onPublish = onPublish
   }

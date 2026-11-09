@@ -15,6 +15,8 @@ A native iPhone app for remixing subway ads during a commute. The opening statio
 
 Open **Adit.xcodeproj** in Xcode, select the **Adit** scheme, choose an iPhone simulator and press **⌘R**. The deployment target is iOS 17. The project includes its assets and has no package dependencies. To install on a physical iPhone, select your development team in Signing & Capabilities and choose the connected phone as the run destination.
 
+Tilt an iPhone to reveal the raised edges of station signs and poster frames. In Simulator, drag a sign or frame to preview the perspective. Reduce Motion keeps the surfaces still.
+
 ## Try the original journey
 
 1. Tap the Friend poster with the orange **596** badge. Swipe between the campaign formats and select **Reframe**.

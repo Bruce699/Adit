@@ -61,3 +61,11 @@ The editor clock refreshes once per second instead of every 180 milliseconds. Un
 The second verification round passed all four XCTest journeys on the iPhone 17 Pro simulator. The added journey verifies that poster bounds stay fixed during rotation, Explore preserves its scroll position, the pill supports drag navigation, and rapid tab switches remain usable. The round also corrected duplicate native tab-bar targets, poster hit bounds during motion, and the draft deletion test's confirmation-sheet targeting. Draft controls now have a 44-point delete target.
 
 A final simulator recording was sampled through several ad changes. [Rolling.mp4](Simulator/Rolling.mp4) shows the upward transition inside stationary frames. The final glass navigation and restored tiled surface are visible in [Station.png](Simulator/Station.png). Performance changes were checked in the simulator. Physical-device frame-rate and energy profiling remain unmeasured.
+
+## Proportions and floating surfaces
+
+Poster artwork now fits proportionally into its viewport, including rotating variants with different source dimensions. Existing normalized edit layers share that fitted coordinate system. Opening the editor adopts the source image's natural canvas ratio so new selections remain aligned.
+
+Station signs and metal frames have raised edges, perspective transforms, directional highlights and offset shadows. One shared Core Motion stream supplies filtered, bounded tilt at up to 30 updates per second, stops in inactive scenes and respects Reduce Motion. Simulator users can drag a sign or frame to preview its depth; the preview springs back on release. Motion support is declared in the app's usage description.
+
+All four simulator journeys passed after these changes. Physical iPhone gyroscope response remains unverified. The depth direction follows the supplied McLane card reference and its dimensional board treatment.

@@ -3,9 +3,17 @@ import UserNotifications
 
 @main struct AditApp: App {
   @StateObject private var store = Store()
+  @StateObject private var motion = SurfaceMotion()
+  @Environment(\.scenePhase) private var phase
+  @Environment(\.accessibilityReduceMotion) private var reduceMotion
   init() { UNUserNotificationCenter.current().delegate = NotificationHandler.shared }
   var body: some Scene {
-    WindowGroup { Shell().environmentObject(store).preferredColorScheme(.light) }
+    WindowGroup {
+      Shell().environmentObject(store).environmentObject(motion).preferredColorScheme(.light)
+        .task(id: "\(phase)-\(reduceMotion)") {
+          if phase == .active && !reduceMotion { motion.start() } else { motion.stop() }
+        }
+    }
   }
 }
 enum Destination: String, CaseIterable {
