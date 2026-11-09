@@ -1,0 +1,4008 @@
+[
+  {
+    "id": "1:2422",
+    "name": "Title",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 0,
+    "y": 0,
+    "text": [
+      "SVSD NYC DESIGNATHON 2025",
+      "TURNING IDLE TIME INTO",
+      "c",
+      "r",
+      "e",
+      "a",
+      "t",
+      "i",
+      "v",
+      "e",
+      "e",
+      "x",
+      "p",
+      "r",
+      "e",
+      "s",
+      "s",
+      "i",
+      "o",
+      "n"
+    ],
+    "children": [
+      [
+        "1:2423",
+        "Black border"
+      ],
+      [
+        "1:2424",
+        "Black border"
+      ],
+      [
+        "1:2425",
+        "Map"
+      ],
+      [
+        "1:3773",
+        "Header"
+      ]
+    ]
+  },
+  {
+    "id": "1:1027",
+    "name": "Title",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 2120,
+    "y": 0,
+    "text": [
+      "SVSD NYC DESIGNATHON 2025",
+      "TURNING IDLE TIME INTO",
+      "c",
+      "r",
+      "e",
+      "a",
+      "t",
+      "i",
+      "v",
+      "e",
+      "e",
+      "x",
+      "p",
+      "r",
+      "e",
+      "s",
+      "s",
+      "i",
+      "o",
+      "n"
+    ],
+    "children": [
+      [
+        "1:1028",
+        "Black border"
+      ],
+      [
+        "1:1029",
+        "Black border"
+      ],
+      [
+        "1:1030",
+        "Map"
+      ],
+      [
+        "1:2378",
+        "Simplified 1"
+      ],
+      [
+        "1:2379",
+        "Header"
+      ]
+    ]
+  },
+  {
+    "id": "1:3816",
+    "name": "Title",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 4240,
+    "y": 0,
+    "text": [
+      "SVSD NYC DESIGNATHON 2025",
+      "TURNING IDLE TIME INTO",
+      "c",
+      "r",
+      "e",
+      "a",
+      "t",
+      "i",
+      "v",
+      "e",
+      "e",
+      "x",
+      "p",
+      "r",
+      "e",
+      "s",
+      "s",
+      "i",
+      "o",
+      "n"
+    ],
+    "children": [
+      [
+        "1:3817",
+        "Black border"
+      ],
+      [
+        "1:3818",
+        "Black border"
+      ],
+      [
+        "1:3819",
+        "Map"
+      ],
+      [
+        "1:5167",
+        "Simplified 1"
+      ],
+      [
+        "1:5168",
+        "Header"
+      ],
+      [
+        "1:5211",
+        "Vector line"
+      ]
+    ]
+  },
+  {
+    "id": "1:6029",
+    "name": "Title",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 6360,
+    "y": 0,
+    "text": [
+      "The Designathon",
+      "c",
+      "e",
+      "e",
+      "e",
+      "3",
+      "p",
+      "d",
+      "e",
+      "s",
+      "i",
+      "g",
+      "c",
+      "r",
+      "e",
+      "a",
+      "n",
+      "e",
+      "r",
+      "s",
+      "5",
+      "d",
+      "a",
+      "y",
+      "s"
+    ],
+    "children": [
+      [
+        "1:6030",
+        "Black border"
+      ],
+      [
+        "1:6031",
+        "Black border"
+      ],
+      [
+        "1:6032",
+        "Frame 212"
+      ],
+      [
+        "1:6034",
+        "The Designathon"
+      ],
+      [
+        "1:6035",
+        "Dots"
+      ]
+    ]
+  },
+  {
+    "id": "1:5232",
+    "name": "Info",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 8480,
+    "y": 0,
+    "text": [
+      "The Designathon",
+      "c",
+      "e",
+      "e",
+      "e",
+      "3",
+      "p",
+      "d",
+      "e",
+      "s",
+      "i",
+      "g",
+      "c",
+      "r",
+      "e",
+      "a",
+      "n",
+      "e",
+      "r",
+      "s",
+      "5",
+      "d",
+      "a",
+      "y",
+      "s",
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path"
+    ],
+    "children": [
+      [
+        "1:5233",
+        "Black border"
+      ],
+      [
+        "1:5234",
+        "Black border"
+      ],
+      [
+        "1:5235",
+        "Main line"
+      ],
+      [
+        "1:5244",
+        "The Designathon"
+      ],
+      [
+        "1:5245",
+        "Dots"
+      ],
+      [
+        "1:5294",
+        "Names"
+      ],
+      [
+        "1:5302",
+        "Line"
+      ]
+    ]
+  },
+  {
+    "id": "1:5318",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 10600,
+    "y": 0,
+    "text": [
+      "The Designathon",
+      "c",
+      "e",
+      "e",
+      "e",
+      "3",
+      "p",
+      "d",
+      "e",
+      "s",
+      "i",
+      "g",
+      "c",
+      "r",
+      "e",
+      "a",
+      "n",
+      "e",
+      "r",
+      "s",
+      "5",
+      "d",
+      "a",
+      "y",
+      "s",
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path"
+    ],
+    "children": [
+      [
+        "1:5319",
+        "Black border"
+      ],
+      [
+        "1:5320",
+        "Black border"
+      ],
+      [
+        "1:5321",
+        "Main line"
+      ],
+      [
+        "1:5330",
+        "The Designathon"
+      ],
+      [
+        "1:5331",
+        "Dots"
+      ],
+      [
+        "1:5380",
+        "Line"
+      ],
+      [
+        "1:5396",
+        "Names"
+      ]
+    ]
+  },
+  {
+    "id": "1:5404",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 12720,
+    "y": 0,
+    "text": [
+      "The Designathon",
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path"
+    ],
+    "children": [
+      [
+        "1:5405",
+        "Black border"
+      ],
+      [
+        "1:5406",
+        "Black border"
+      ],
+      [
+        "1:5407",
+        "Main line"
+      ],
+      [
+        "1:5416",
+        "The Designathon"
+      ],
+      [
+        "1:5417",
+        "Line"
+      ],
+      [
+        "1:5433",
+        "Names"
+      ],
+      [
+        "1:5441",
+        "Background crop"
+      ]
+    ]
+  },
+  {
+    "id": "1:5444",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 14840,
+    "y": 0,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "Have you see this ad?"
+    ],
+    "children": [
+      [
+        "1:5445",
+        "Black border"
+      ],
+      [
+        "1:5446",
+        "Black border"
+      ],
+      [
+        "1:5447",
+        "Main line"
+      ],
+      [
+        "1:5456",
+        "Names"
+      ],
+      [
+        "1:5464",
+        "Background crop"
+      ],
+      [
+        "1:5467",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:5470",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 16960,
+    "y": 0,
+    "text": [
+      "Have you see this ad?",
+      "Last month, social media entered a huge frenzy"
+    ],
+    "children": [
+      [
+        "1:5471",
+        "Background crop"
+      ],
+      [
+        "1:5474",
+        "Text"
+      ],
+      [
+        "1:5478",
+        "Images"
+      ]
+    ]
+  },
+  {
+    "id": "1:5487",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 19080,
+    "y": 0,
+    "text": [
+      "Have you see this ad?",
+      "Last month, social media entered a huge frenzy",
+      "Everyone seemed to have something to say about it...",
+      "jake",
+      "@subwaysurfersoffical",
+      "10:36 AM",
+      "Sep 26, 2025"
+    ],
+    "children": [
+      [
+        "1:5488",
+        "Background crop"
+      ],
+      [
+        "1:5491",
+        "Images"
+      ],
+      [
+        "1:5500",
+        "Text"
+      ],
+      [
+        "1:5505",
+        "Subway Surf"
+      ]
+    ]
+  },
+  {
+    "id": "1:5516",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 21200,
+    "y": 0,
+    "text": [
+      "jake",
+      "@subwaysurfersoffical",
+      "10:36 AM",
+      "Sep 26, 2025",
+      "Last month, social media entered a huge frenzy",
+      "Everyone seemed to have something to say about it...",
+      "...because ads get people talking and people think they can do better"
+    ],
+    "children": [
+      [
+        "1:5517",
+        "Background crop"
+      ],
+      [
+        "1:5520",
+        "Images"
+      ],
+      [
+        "1:5529",
+        "Subway Surf"
+      ],
+      [
+        "1:5540",
+        "Reddit"
+      ],
+      [
+        "1:5547",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:5552",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 23320,
+    "y": 0,
+    "text": [
+      "jake",
+      "@subwaysurfersoffical",
+      "10:36 AM",
+      "Sep 26, 2025",
+      "Everyone seemed to have something to say about it...",
+      "...because ads get people talking and people think they can do better",
+      "So that’s why we want to create..."
+    ],
+    "children": [
+      [
+        "1:5553",
+        "Background crop"
+      ],
+      [
+        "1:5556",
+        "Images"
+      ],
+      [
+        "1:5565",
+        "Subway Surf"
+      ],
+      [
+        "1:5576",
+        "Reddit"
+      ],
+      [
+        "1:5583",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:5588",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 25440,
+    "y": 0,
+    "text": [
+      "jake",
+      "@subwaysurfersoffical",
+      "10:36 AM",
+      "Sep 26, 2025",
+      "Everyone seemed to have something to say about it...",
+      "...because ads get people talking and people think they can do better",
+      "So that’s why we want to create...",
+      "A PLATFORM FOR",
+      "CREATIVITY",
+      "FUN",
+      "COMMENTARY",
+      "CRITIQUE",
+      "EXPRESSION",
+      "DESIGN",
+      "DIGITAL VANDALISM",
+      "SILLYNESS",
+      "COMMUNITY"
+    ],
+    "children": [
+      [
+        "1:5589",
+        "Background crop"
+      ],
+      [
+        "1:5592",
+        "Images"
+      ],
+      [
+        "1:5601",
+        "Subway Surf"
+      ],
+      [
+        "1:5612",
+        "Reddit"
+      ],
+      [
+        "1:5619",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:5635",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 27560,
+    "y": 0,
+    "text": [
+      "Everyone seemed to have something to say about it...",
+      "...because ads get people talking and people think they can do better",
+      "So that’s why we want to create...",
+      "This is how we’re approaching this brief",
+      "A PLATFORM FOR",
+      "CREATIVITY",
+      "FUN",
+      "COMMENTARY",
+      "CRITIQUE",
+      "EXPRESSION",
+      "DESIGN",
+      "DIGITAL VANDALISM",
+      "SILLYNESS",
+      "COMMUNITY",
+      "DURING",
+      "IDLE MOMENTS",
+      "COMMUTERS",
+      "OF "
+    ],
+    "children": [
+      [
+        "1:5636",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:5657",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 29680,
+    "y": 0,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "...because ads get people talking and people think they can do better",
+      "So that’s why we want to create...",
+      "A PLATFORM FOR",
+      "DURING",
+      "IDLE MOMENTS",
+      "COMMUTERS",
+      "OF ",
+      "CREATIVITY",
+      "FUN",
+      "COMMENTARY",
+      "CRITIQUE",
+      "EXPRESSION",
+      "DESIGN",
+      "DIGITAL VANDALISM",
+      "SILLYNESS",
+      "COMMUNITY",
+      "This is how we’re approaching this brief",
+      "3",
+      "The average joe in a constrained environment",
+      "2",
+      "Inevitable and unproductive times",
+      "1",
+      "A lightweight, playful, and personally satisfying experience"
+    ],
+    "children": [
+      [
+        "1:5658",
+        "Main line"
+      ],
+      [
+        "1:5669",
+        "Names"
+      ],
+      [
+        "1:5680",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:5712",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 31800,
+    "y": 0,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "...because ads get people talking and people think they can do better",
+      "So that’s why we want to create...",
+      "A PLATFORM FOR",
+      "DURING",
+      "IDLE MOMENTS",
+      "COMMUTERS",
+      "OF ",
+      "CREATIVITY",
+      "FUN",
+      "COMMENTARY",
+      "CRITIQUE",
+      "EXPRESSION",
+      "DESIGN",
+      "DIGITAL VANDALISM",
+      "SILLYNESS",
+      "COMMUNITY",
+      "This is how we’re approaching this brief",
+      "3",
+      "The average joe in a constrained environment",
+      "2",
+      "Inevitable and unproductive times",
+      "1",
+      "A lightweight, playful, and personally satisfying experience"
+    ],
+    "children": [
+      [
+        "1:5713",
+        "Main line"
+      ],
+      [
+        "1:5724",
+        "Names"
+      ],
+      [
+        "1:5735",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:5767",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 33920,
+    "y": 0,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "...because ads get people talking and people think they can do better",
+      "So that’s why we want to create...",
+      "A PLATFORM FOR",
+      "DURING",
+      "IDLE MOMENTS",
+      "COMMUTERS",
+      "OF ",
+      "CREATIVITY",
+      "FUN",
+      "COMMENTARY",
+      "CRITIQUE",
+      "EXPRESSION",
+      "DESIGN",
+      "DIGITAL VANDALISM",
+      "SILLYNESS",
+      "COMMUNITY",
+      "3",
+      "The average joe in a constrained environment",
+      "2",
+      "Inevitable and unproductive times",
+      "1",
+      "A lightweight, playful, and personally satisfying experience"
+    ],
+    "children": [
+      [
+        "1:5768",
+        "Main line"
+      ],
+      [
+        "1:5779",
+        "Names"
+      ],
+      [
+        "1:5790",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:5821",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 36040,
+    "y": 0,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "...because ads get people talking and people think they can do better",
+      "A PLATFORM FOR",
+      "DURING",
+      "IDLE MOMENTS",
+      "COMMUTERS",
+      "OF ",
+      "CREATIVITY",
+      "FUN",
+      "COMMENTARY",
+      "CRITIQUE",
+      "EXPRESSION",
+      "DESIGN",
+      "DIGITAL VANDALISM",
+      "SILLYNESS",
+      "COMMUNITY",
+      "So that’s why we want to create...",
+      "3",
+      "The average joe in a constrained environment",
+      "2",
+      "Inevitable and unproductive times",
+      "1",
+      "A lightweight, playful, and personally satisfying experience"
+    ],
+    "children": [
+      [
+        "1:5822",
+        "Main line"
+      ],
+      [
+        "1:5833",
+        "Names"
+      ],
+      [
+        "1:5844",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:5875",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 38160,
+    "y": 0,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "...because ads get people talking and people think they can do better",
+      "A PLATFORM FOR",
+      "DURING",
+      "IDLE MOMENTS",
+      "COMMUTERS",
+      "OF ",
+      "CREATIVITY",
+      "FUN",
+      "COMMENTARY",
+      "CRITIQUE",
+      "EXPRESSION",
+      "DESIGN",
+      "DIGITAL VANDALISM",
+      "SILLYNESS",
+      "COMMUNITY",
+      "So that’s why we want to create...",
+      "3",
+      "The average joe in a constrained environment",
+      "2",
+      "Inevitable and unproductive times",
+      "1",
+      "A lightweight, playful, and personally satisfying experience"
+    ],
+    "children": [
+      [
+        "1:5876",
+        "Main line"
+      ],
+      [
+        "1:5887",
+        "Names"
+      ],
+      [
+        "1:5898",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:5929",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 0,
+    "y": 2080,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "Everyone seemed to have something to say about it...",
+      "...because ads get people talking and people think they can do better",
+      "So that’s why we want to create...",
+      "A PLATFORM FOR",
+      "DURING",
+      "IDLE MOMENTS",
+      "COMMUTERS",
+      "OF ",
+      "CREATIVITY",
+      "FUN",
+      "COMMENTARY",
+      "CRITIQUE",
+      "EXPRESSION",
+      "DESIGN",
+      "DIGITAL VANDALISM",
+      "SILLYNESS",
+      "COMMUNITY"
+    ],
+    "children": [
+      [
+        "1:5930",
+        "Main line"
+      ],
+      [
+        "1:5941",
+        "Names"
+      ],
+      [
+        "1:5952",
+        "Text"
+      ],
+      [
+        "1:5972",
+        "Logo Background"
+      ],
+      [
+        "1:5978",
+        "Subtract"
+      ]
+    ]
+  },
+  {
+    "id": "1:5979",
+    "name": "Adit animation",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 2120,
+    "y": 2080,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "Everyone seemed to have something to say about it...",
+      "...because ads get people talking and people think they can do better",
+      "So that’s why we want to create...",
+      "A PLATFORM FOR",
+      "DURING",
+      "IDLE MOMENTS",
+      "COMMUTERS",
+      "OF ",
+      "CREATIVITY",
+      "FUN",
+      "COMMENTARY",
+      "CRITIQUE",
+      "EXPRESSION",
+      "DESIGN",
+      "DIGITAL VANDALISM",
+      "SILLYNESS",
+      "COMMUNITY"
+    ],
+    "children": [
+      [
+        "1:5980",
+        "Main line"
+      ],
+      [
+        "1:5991",
+        "Names"
+      ],
+      [
+        "1:6002",
+        "Text"
+      ],
+      [
+        "1:6022",
+        "Subtract"
+      ],
+      [
+        "1:6023",
+        "Logo Background"
+      ]
+    ]
+  },
+  {
+    "id": "1:6084",
+    "name": "Adit animation",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 4240,
+    "y": 2080,
+    "text": [
+      "Ad editing in transit"
+    ],
+    "children": [
+      [
+        "1:6085",
+        "Subtract"
+      ],
+      [
+        "1:6086",
+        "Logo Background"
+      ]
+    ]
+  },
+  {
+    "id": "1:6093",
+    "name": "Adit animation",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 6360,
+    "y": 2080,
+    "text": [
+      "Ad editing in transit"
+    ],
+    "children": [
+      [
+        "1:6094",
+        "Subtract"
+      ],
+      [
+        "1:6095",
+        "Logo Background"
+      ],
+      [
+        "1:6102",
+        "Border"
+      ]
+    ]
+  },
+  {
+    "id": "1:6734",
+    "name": "Adit animation",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 8480,
+    "y": 2080,
+    "text": [
+      "Ad editing in transit"
+    ],
+    "children": [
+      [
+        "1:6735",
+        "Border"
+      ]
+    ]
+  },
+  {
+    "id": "1:6103",
+    "name": "Adit animation",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 10600,
+    "y": 2080,
+    "text": [
+      "Ad editing in transit",
+      "Take any ad"
+    ],
+    "children": [
+      [
+        "1:6104",
+        "Wall Texture"
+      ],
+      [
+        "1:6105",
+        "Border"
+      ],
+      [
+        "1:6119",
+        "Border"
+      ]
+    ]
+  },
+  {
+    "id": "1:6121",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 12720,
+    "y": 2080,
+    "text": [
+      "Ad editing in transit",
+      "Take any ad",
+      "And transform it to your liking"
+    ],
+    "children": [
+      [
+        "1:6122",
+        "Wall Texture"
+      ],
+      [
+        "1:6123",
+        "Border"
+      ],
+      [
+        "1:6138",
+        "Border"
+      ]
+    ]
+  },
+  {
+    "id": "1:6140",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 14840,
+    "y": 2080,
+    "text": [
+      "Ad editing in transit",
+      "Take any ad",
+      "And transform it to your liking",
+      "YOU"
+    ],
+    "children": [
+      [
+        "1:6141",
+        "Wall Texture"
+      ],
+      [
+        "1:6142",
+        "Border"
+      ],
+      [
+        "1:6157",
+        "Border"
+      ],
+      [
+        "1:6174",
+        "Selection"
+      ],
+      [
+        "1:6175",
+        "Selection"
+      ]
+    ]
+  },
+  {
+    "id": "1:6176",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 16960,
+    "y": 2080,
+    "text": [
+      "Ad editing in transit",
+      "Take any ad",
+      "And transform it to your liking"
+    ],
+    "children": [
+      [
+        "1:6177",
+        "Wall Texture"
+      ],
+      [
+        "1:6178",
+        "Border"
+      ],
+      [
+        "1:6193",
+        "Border"
+      ],
+      [
+        "1:6196",
+        "Selection"
+      ],
+      [
+        "1:6197",
+        "Selection"
+      ]
+    ]
+  },
+  {
+    "id": "1:6198",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 19080,
+    "y": 2080,
+    "text": [
+      "And transform it to your liking",
+      "Take any ad"
+    ],
+    "children": [
+      [
+        "1:6199",
+        "Wall Texture"
+      ],
+      [
+        "1:6200",
+        "Border"
+      ],
+      [
+        "1:6214",
+        "Border"
+      ],
+      [
+        "1:6217",
+        "Selection"
+      ],
+      [
+        "1:6218",
+        "Selection"
+      ]
+    ]
+  },
+  {
+    "id": "1:6219",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 21200,
+    "y": 2080,
+    "text": [
+      "And transform it to your liking",
+      "Take any ad"
+    ],
+    "children": [
+      [
+        "1:6220",
+        "Wall Texture"
+      ],
+      [
+        "1:6221",
+        "Border"
+      ],
+      [
+        "1:6235",
+        "Border"
+      ],
+      [
+        "1:6238",
+        "image 283"
+      ],
+      [
+        "1:6239",
+        "image 282"
+      ],
+      [
+        "1:6240",
+        "Back market ad"
+      ],
+      [
+        "1:6241",
+        "Back market ad"
+      ],
+      [
+        "1:6242",
+        "Back market ad"
+      ]
+    ]
+  },
+  {
+    "id": "1:6243",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 23320,
+    "y": 2080,
+    "text": [
+      "And transform it to your liking",
+      "Take any ad",
+      "Why ads though?",
+      "EXIT",
+      "Why ads though?",
+      "EXIT"
+    ],
+    "children": [
+      [
+        "1:6244",
+        "Wall Texture"
+      ],
+      [
+        "1:6245",
+        "Border"
+      ],
+      [
+        "1:6259",
+        "Border"
+      ],
+      [
+        "1:6262",
+        "image 283"
+      ],
+      [
+        "1:6263",
+        "image 282"
+      ],
+      [
+        "1:6264",
+        "Back market ad"
+      ],
+      [
+        "1:6265",
+        "Back market ad"
+      ],
+      [
+        "1:6266",
+        "Back market ad"
+      ],
+      [
+        "1:6267",
+        "Text"
+      ],
+      [
+        "1:6272",
+        "Exit space"
+      ],
+      [
+        "1:6274",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:6283",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 25440,
+    "y": 2080,
+    "text": [
+      "And transform it to your liking",
+      "Take any ad",
+      "Why ads though?",
+      "EXIT"
+    ],
+    "children": [
+      [
+        "1:6284",
+        "Wall Texture"
+      ],
+      [
+        "1:6285",
+        "Border"
+      ],
+      [
+        "1:6299",
+        "Border"
+      ],
+      [
+        "1:6302",
+        "image 283"
+      ],
+      [
+        "1:6303",
+        "image 282"
+      ],
+      [
+        "1:6304",
+        "Back market ad"
+      ],
+      [
+        "1:6305",
+        "Back market ad"
+      ],
+      [
+        "1:6306",
+        "Back market ad"
+      ],
+      [
+        "1:6307",
+        "Exit space"
+      ],
+      [
+        "1:6309",
+        "Text"
+      ],
+      [
+        "1:6318",
+        "City"
+      ]
+    ]
+  },
+  {
+    "id": "1:6323",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 27560,
+    "y": 2080,
+    "text": [
+      "And transform it to your liking",
+      "Take any ad",
+      "Why ads though?",
+      "EXIT"
+    ],
+    "children": [
+      [
+        "1:6324",
+        "Wall Texture"
+      ],
+      [
+        "1:6325",
+        "Border"
+      ],
+      [
+        "1:6339",
+        "Border"
+      ],
+      [
+        "1:6342",
+        "image 283"
+      ],
+      [
+        "1:6343",
+        "image 282"
+      ],
+      [
+        "1:6344",
+        "Back market ad"
+      ],
+      [
+        "1:6345",
+        "Back market ad"
+      ],
+      [
+        "1:6346",
+        "Back market ad"
+      ],
+      [
+        "1:6347",
+        "Exit space"
+      ],
+      [
+        "1:6349",
+        "Text"
+      ],
+      [
+        "1:6358",
+        "City"
+      ],
+      [
+        "1:6363",
+        "Horizontals"
+      ],
+      [
+        "1:6364",
+        "Horizontals"
+      ],
+      [
+        "1:6365",
+        "Verticals"
+      ],
+      [
+        "1:6366",
+        "Verticals"
+      ]
+    ]
+  },
+  {
+    "id": "1:6367",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 29680,
+    "y": 2080,
+    "text": [],
+    "children": [
+      [
+        "1:6368",
+        "City"
+      ],
+      [
+        "1:6373",
+        "Horizontals"
+      ],
+      [
+        "1:6374",
+        "Horizontals"
+      ],
+      [
+        "1:6375",
+        "Verticals"
+      ],
+      [
+        "1:6376",
+        "Verticals"
+      ]
+    ]
+  },
+  {
+    "id": "1:6711",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 31800,
+    "y": 2080,
+    "text": [],
+    "children": [
+      [
+        "1:6712",
+        "City"
+      ],
+      [
+        "1:6717",
+        "Horizontals"
+      ],
+      [
+        "1:6718",
+        "Horizontals"
+      ],
+      [
+        "1:6719",
+        "Verticals"
+      ],
+      [
+        "1:6720",
+        "Verticals"
+      ]
+    ]
+  },
+  {
+    "id": "1:6721",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 33920,
+    "y": 2080,
+    "text": [],
+    "children": [
+      [
+        "1:6722",
+        "Subway"
+      ],
+      [
+        "1:6725",
+        "City"
+      ],
+      [
+        "1:6730",
+        "Horizontals"
+      ],
+      [
+        "1:6731",
+        "Horizontals"
+      ],
+      [
+        "1:6732",
+        "Verticals"
+      ],
+      [
+        "1:6733",
+        "Verticals"
+      ]
+    ]
+  },
+  {
+    "id": "1:6684",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 36040,
+    "y": 2080,
+    "text": [],
+    "children": [
+      [
+        "1:6685",
+        "Subway"
+      ],
+      [
+        "1:6688",
+        "City"
+      ],
+      [
+        "1:6693",
+        "Horizontals"
+      ],
+      [
+        "1:6694",
+        "Horizontals"
+      ],
+      [
+        "1:6695",
+        "Verticals"
+      ],
+      [
+        "1:6696",
+        "Verticals"
+      ]
+    ]
+  },
+  {
+    "id": "1:6697",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 38160,
+    "y": 2080,
+    "text": [],
+    "children": [
+      [
+        "1:6698",
+        "Subway"
+      ],
+      [
+        "1:6701",
+        "City"
+      ],
+      [
+        "1:6706",
+        "Horizontals"
+      ],
+      [
+        "1:6707",
+        "Horizontals"
+      ],
+      [
+        "1:6708",
+        "Verticals"
+      ],
+      [
+        "1:6709",
+        "Verticals"
+      ]
+    ]
+  },
+  {
+    "id": "1:6710",
+    "name": "Adit example",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 40180,
+    "y": 2080,
+    "text": [],
+    "children": []
+  },
+  {
+    "id": "1:7102",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 42277,
+    "y": 2080,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "We travel back to 10 minutes ago..."
+    ],
+    "children": [
+      [
+        "1:7103",
+        "Black border"
+      ],
+      [
+        "1:7104",
+        "Black border"
+      ],
+      [
+        "1:7105",
+        "Main line"
+      ],
+      [
+        "1:7114",
+        "Names"
+      ],
+      [
+        "1:7122",
+        "Background crop"
+      ],
+      [
+        "1:7125",
+        "Text"
+      ]
+    ]
+  },
+  {
+    "id": "1:7199",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 44397,
+    "y": 2080,
+    "text": [
+      "We travel back to 10 minutes ago...",
+      "Rectangle 1",
+      "􀇕",
+      "72º",
+      "Partly Cloudy",
+      "H:88º L:64º",
+      "78",
+      "50",
+      "67",
+      "􀆴",
+      "8:29",
+      "PM",
+      "Mon 10 􀆪 NYC 12:41 AM",
+      "adit",
+      "adit",
+      "9:41 AM",
+      "596 people have reframed the friend ad near you. What’s your take?",
+      "9:41"
+    ],
+    "children": [
+      [
+        "1:7200",
+        "Background crop"
+      ],
+      [
+        "1:7203",
+        "Text"
+      ],
+      [
+        "1:7206",
+        "Images"
+      ],
+      [
+        "1:7215",
+        "Frame 128"
+      ],
+      [
+        "1:7230",
+        "Group 33"
+      ],
+      [
+        "1:7258",
+        "Examples/Keyboard - iPhone"
+      ],
+      [
+        "1:7259",
+        "Status Bar"
+      ]
+    ]
+  },
+  {
+    "id": "1:7128",
+    "name": "Intro",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 46494,
+    "y": 2080,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "We travel back to 10 minutes ago...",
+      "Rectangle 1",
+      "􀇕",
+      "72º",
+      "Partly Cloudy",
+      "H:88º L:64º",
+      "78",
+      "50",
+      "67",
+      "􀆴",
+      "8:29",
+      "PM",
+      "Mon 10 􀆪 NYC 12:41 AM",
+      "adit",
+      "adit",
+      "9:41 AM",
+      "596 people have reframed the friend ad near you. What’s your take?",
+      "9:41"
+    ],
+    "children": [
+      [
+        "1:7129",
+        "Black border"
+      ],
+      [
+        "1:7130",
+        "Black border"
+      ],
+      [
+        "1:7131",
+        "Main line"
+      ],
+      [
+        "1:7140",
+        "Names"
+      ],
+      [
+        "1:7148",
+        "Background crop"
+      ],
+      [
+        "1:7151",
+        "Text"
+      ],
+      [
+        "1:7154",
+        "Frame 128"
+      ],
+      [
+        "1:7169",
+        "Group 33"
+      ],
+      [
+        "1:7197",
+        "Examples/Keyboard - iPhone"
+      ],
+      [
+        "1:7198",
+        "Status Bar"
+      ]
+    ]
+  },
+  {
+    "id": "1:6841",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 48521,
+    "y": 2080,
+    "text": [
+      "Rectangle 1",
+      "􀇕",
+      "72º",
+      "Partly Cloudy",
+      "H:88º L:64º",
+      "78",
+      "50",
+      "67",
+      "􀆴",
+      "8:29",
+      "PM",
+      "Mon 10 􀆪 NYC 12:41 AM",
+      "adit",
+      "adit",
+      "9:41 AM",
+      "596 people have reframed the friend ad near you. What’s your take?",
+      "9:41"
+    ],
+    "children": [
+      [
+        "1:6842",
+        "Background crop"
+      ],
+      [
+        "1:6845",
+        "Frame 128"
+      ],
+      [
+        "1:6851",
+        "Group 33"
+      ],
+      [
+        "1:6879",
+        "Examples/Keyboard - iPhone"
+      ],
+      [
+        "1:6880",
+        "Status Bar"
+      ]
+    ]
+  },
+  {
+    "id": "1:6792",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 50548,
+    "y": 2080,
+    "text": [
+      "Rectangle 1",
+      "􀇕",
+      "72º",
+      "Partly Cloudy",
+      "H:88º L:64º",
+      "78",
+      "50",
+      "67",
+      "􀆴",
+      "8:29",
+      "PM",
+      "Mon 10 􀆪 NYC 12:41 AM",
+      "adit",
+      "adit",
+      "9:41 AM",
+      "596 people have reframed the friend ad near you. What’s your take?",
+      "9:41"
+    ],
+    "children": [
+      [
+        "1:6793",
+        "Background crop"
+      ],
+      [
+        "1:6796",
+        "Frame 128"
+      ],
+      [
+        "1:6811",
+        "Group 33"
+      ],
+      [
+        "1:6839",
+        "Examples/Keyboard - iPhone"
+      ],
+      [
+        "1:6840",
+        "Status Bar"
+      ]
+    ]
+  },
+  {
+    "id": "1:6743",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 52545,
+    "y": 2080,
+    "text": [
+      "Rectangle 1",
+      "􀇕",
+      "72º",
+      "Partly Cloudy",
+      "H:88º L:64º",
+      "78",
+      "50",
+      "67",
+      "􀆴",
+      "8:29",
+      "PM",
+      "Mon 10 􀆪 NYC 12:41 AM",
+      "adit",
+      "adit",
+      "9:41 AM",
+      "596 people have reframed the friend ad near you. What’s your take?",
+      "9:41"
+    ],
+    "children": [
+      [
+        "1:6744",
+        "Background crop"
+      ],
+      [
+        "1:6747",
+        "Frame 128"
+      ],
+      [
+        "1:6762",
+        "Group 33"
+      ],
+      [
+        "1:6790",
+        "Examples/Keyboard - iPhone"
+      ],
+      [
+        "1:6791",
+        "Status Bar"
+      ]
+    ]
+  },
+  {
+    "id": "1:6949",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 54542,
+    "y": 2080,
+    "text": [
+      "Rectangle 1",
+      "Friend.com",
+      "596 reframes",
+      "Reframe",
+      "Rectangle 1"
+    ],
+    "children": [
+      [
+        "1:6950",
+        "Background crop"
+      ],
+      [
+        "1:6953",
+        "Frame 1"
+      ],
+      [
+        "1:7015",
+        "Frame 128"
+      ],
+      [
+        "1:7018",
+        "Examples/Keyboard - iPhone"
+      ]
+    ]
+  },
+  {
+    "id": "1:6881",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 56539,
+    "y": 2080,
+    "text": [
+      "Rectangle 1",
+      "Friend.com",
+      "596 reframes",
+      "Reframe"
+    ],
+    "children": [
+      [
+        "1:6882",
+        "Background crop"
+      ],
+      [
+        "1:6885",
+        "Frame 1"
+      ],
+      [
+        "1:6948",
+        "Examples/Keyboard - iPhone"
+      ]
+    ]
+  },
+  {
+    "id": "1:7019",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 58536,
+    "y": 2080,
+    "text": [
+      "Rectangle 1",
+      "Friend.com",
+      "596 reframes",
+      "Reframe"
+    ],
+    "children": [
+      [
+        "1:7020",
+        "Background crop"
+      ],
+      [
+        "1:7023",
+        "Frame 1"
+      ],
+      [
+        "1:7059",
+        "Examples/Keyboard - iPhone"
+      ]
+    ]
+  },
+  {
+    "id": "1:7060",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 60533,
+    "y": 2080,
+    "text": [
+      "Start Reframe 1"
+    ],
+    "children": [
+      [
+        "1:7061",
+        "Background crop"
+      ],
+      [
+        "1:7064",
+        "Start Reframe 1"
+      ]
+    ]
+  },
+  {
+    "id": "1:7067",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 62530,
+    "y": 2080,
+    "text": [
+      "AI Brush 1"
+    ],
+    "children": [
+      [
+        "1:7068",
+        "Background crop"
+      ],
+      [
+        "1:7071",
+        "AI Brush"
+      ]
+    ]
+  },
+  {
+    "id": "1:7074",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 64527,
+    "y": 2080,
+    "text": [
+      "Scibble"
+    ],
+    "children": [
+      [
+        "1:7075",
+        "Background crop"
+      ],
+      [
+        "1:7078",
+        "Scibble"
+      ]
+    ]
+  },
+  {
+    "id": "1:7081",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 66524,
+    "y": 2080,
+    "text": [
+      "Text"
+    ],
+    "children": [
+      [
+        "1:7082",
+        "Background crop"
+      ],
+      [
+        "1:7085",
+        "Text Editing"
+      ]
+    ]
+  },
+  {
+    "id": "1:7088",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 68521,
+    "y": 2080,
+    "text": [
+      "AI Ending"
+    ],
+    "children": [
+      [
+        "1:7089",
+        "Background crop"
+      ],
+      [
+        "1:7092",
+        "AI Ending"
+      ]
+    ]
+  },
+  {
+    "id": "1:7095",
+    "name": "Happy Path",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 70518,
+    "y": 2080,
+    "text": [
+      "Back to Home"
+    ],
+    "children": [
+      [
+        "1:7096",
+        "Background crop"
+      ],
+      [
+        "1:7099",
+        "Back to Home"
+      ]
+    ]
+  },
+  {
+    "id": "1:7290",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 72546,
+    "y": 2080,
+    "text": [],
+    "children": []
+  },
+  {
+    "id": "1:7260",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 74573,
+    "y": 2080,
+    "text": [
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "Deep Dive Line",
+      "Product Questions, Iterations"
+    ],
+    "children": [
+      [
+        "1:7261",
+        "Main line"
+      ],
+      [
+        "1:7272",
+        "Deep Dive line"
+      ],
+      [
+        "1:7279",
+        "Names"
+      ]
+    ]
+  },
+  {
+    "id": "74:417",
+    "name": "Friend ad",
+    "page": "Final Presentation",
+    "w": 761,
+    "h": 662,
+    "x": 22196,
+    "y": 3248,
+    "text": [],
+    "children": []
+  },
+  {
+    "id": "1:7291",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 0,
+    "y": 4540,
+    "text": [
+      "While designing adit, we asked important questions:",
+      "HMW create a lightweight tool for creative flow? ",
+      "HMW to design for the subway technically and aesthetically?",
+      "HMW to retain users and encourage aditing as a subway activity?",
+      "Everyone seemed to have something to say about it...",
+      "...because ads get people talking and people think they can do better",
+      "So that’s why we want to create...",
+      "A PLATFORM FOR",
+      "DURING",
+      "IDLE MOMENTS",
+      "COMMUTERS",
+      "OF ",
+      "CREATIVITY",
+      "FUN",
+      "COMMENTARY",
+      "CRITIQUE",
+      "EXPRESSION",
+      "DESIGN",
+      "DIGITAL VANDALISM",
+      "SILLYNESS",
+      "COMMUNITY",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "Deep Dive Line",
+      "Product Questions, Iterations"
+    ],
+    "children": [
+      [
+        "1:7292",
+        "Outline"
+      ],
+      [
+        "1:7298",
+        "Main line"
+      ],
+      [
+        "1:7309",
+        "Text"
+      ],
+      [
+        "1:7329",
+        "Subtract"
+      ],
+      [
+        "1:7330",
+        "Deep Dive line"
+      ],
+      [
+        "1:7337",
+        "Names"
+      ]
+    ]
+  },
+  {
+    "id": "1:7348",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 2120,
+    "y": 4540,
+    "text": [
+      "While designing adit, we asked important questions:",
+      "HMW create a lightweight tool for creative flow? ",
+      "HMW to design for the subway technically and aesthetically?",
+      "HMW to retain users and encourage aditing as a subway activity?",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "Deep Dive Line",
+      "Product Questions, Iterations",
+      "Creativity St",
+      "Simplicity, Fun, Precision"
+    ],
+    "children": [
+      [
+        "1:7349",
+        "Outline"
+      ],
+      [
+        "1:7355",
+        "Main line"
+      ],
+      [
+        "1:7366",
+        "Deep Dive line"
+      ],
+      [
+        "1:7373",
+        "Names"
+      ],
+      [
+        "1:7384",
+        "Agenda Item"
+      ]
+    ]
+  },
+  {
+    "id": "1:7387",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 4186,
+    "y": 4540,
+    "text": [
+      "While designing adit, we asked important questions:",
+      "HMW create a lightweight tool for creative flow? ",
+      "HMW to design for the subway technically and aesthetically?",
+      "HMW to retain users and encourage aditing as a subway activity?",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "Deep Dive Line",
+      "Product Questions, Iterations",
+      "Creativity St",
+      "Simplicity, Fun, Precision"
+    ],
+    "children": [
+      [
+        "1:7388",
+        "Outline"
+      ],
+      [
+        "1:7394",
+        "Main line"
+      ],
+      [
+        "1:7405",
+        "Deep Dive line"
+      ],
+      [
+        "1:7412",
+        "Names"
+      ],
+      [
+        "1:7423",
+        "Agenda Item"
+      ],
+      [
+        "1:7426",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7427",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 6360,
+    "y": 4540,
+    "text": [
+      "While designing adit, we asked important questions:",
+      "HMW create a lightweight tool for creative flow? ",
+      "HMW to design for the subway technically and aesthetically?",
+      "HMW to retain users and encourage aditing as a subway activity?",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "Deep Dive Line",
+      "Product Questions, Iterations",
+      "Creativity St",
+      "Simplicity, Fun, Precision",
+      "A lightweight tool for creative flow"
+    ],
+    "children": [
+      [
+        "1:7428",
+        "Outline"
+      ],
+      [
+        "1:7434",
+        "Main line"
+      ],
+      [
+        "1:7445",
+        "Deep Dive line"
+      ],
+      [
+        "1:7452",
+        "Names"
+      ],
+      [
+        "1:7463",
+        "Agenda Item"
+      ],
+      [
+        "1:7466",
+        "image 304"
+      ],
+      [
+        "1:7467",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7469",
+    "name": "DD1",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 8472,
+    "y": 4540,
+    "text": [
+      "Editing on your phone can feel like a huge commitment",
+      "A lightweight tool for creative flow"
+    ],
+    "children": [
+      [
+        "1:7470",
+        "image 304"
+      ],
+      [
+        "1:7471",
+        "Editing on your phone can feel like a huge commitment"
+      ],
+      [
+        "1:7472",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7474",
+    "name": "DD1",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 10562,
+    "y": 4540,
+    "text": [
+      "Editing on your phone can feel like a huge commitment",
+      "Asset library",
+      "AI generate assets",
+      "Add Text",
+      "Brush",
+      "So we want to prioritize ease and creative precision on-the-go",
+      "A lightweight tool for creative flow",
+      "An intentional and minimal toolkit"
+    ],
+    "children": [
+      [
+        "1:7475",
+        "image 304"
+      ],
+      [
+        "1:7476",
+        "Editing on your phone can feel like a huge commitment"
+      ],
+      [
+        "1:7477",
+        "Phone"
+      ],
+      [
+        "1:7487",
+        "So we want to prioritize ease and creative precision on-the-go"
+      ],
+      [
+        "1:7488",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7491",
+    "name": "DD1",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 12652,
+    "y": 4540,
+    "text": [
+      "So we want to prioritize ease and creative precision on-the-go",
+      "Asset library",
+      "AI generate assets",
+      "Add Text",
+      "Brush",
+      "Editing on your phone can feel like a huge commitment",
+      "Asset generation via circling, snappy grid, instagram-esque experience",
+      "A lightweight tool for creative flow",
+      "An intentional and minimal toolkit",
+      "1. Constrained simplicity & ease"
+    ],
+    "children": [
+      [
+        "1:7492",
+        "So we want to prioritize ease and creative precision on-the-go"
+      ],
+      [
+        "1:7493",
+        "Phone"
+      ],
+      [
+        "1:7503",
+        "image 304"
+      ],
+      [
+        "1:7504",
+        "Editing on your phone can feel like a huge commitment"
+      ],
+      [
+        "1:7505",
+        "Asset generation via circling, snappy grid, instagram-esque experience"
+      ],
+      [
+        "1:7506",
+        "image 309"
+      ],
+      [
+        "1:7507",
+        "image 310"
+      ],
+      [
+        "1:7508",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7512",
+    "name": "DD1",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 14742,
+    "y": 4540,
+    "text": [
+      "So we want to prioritize ease and creative precision on-the-go",
+      "Asset generation via circling, snappy grid, instagram-esque experience",
+      "Asset library",
+      "AI generate assets",
+      "Add Text",
+      "Brush",
+      "Editing on your phone can feel like a huge commitment",
+      "A lightweight tool for creative flow",
+      "An intentional and minimal toolkit",
+      "1. Constrained simplicity & ease",
+      "2. Creative precision"
+    ],
+    "children": [
+      [
+        "1:7513",
+        "So we want to prioritize ease and creative precision on-the-go"
+      ],
+      [
+        "1:7514",
+        "Asset generation via circling, snappy grid, instagram-esque experience"
+      ],
+      [
+        "1:7515",
+        "Phone"
+      ],
+      [
+        "1:7525",
+        "image 304"
+      ],
+      [
+        "1:7526",
+        "Editing on your phone can feel like a huge commitment"
+      ],
+      [
+        "1:7527",
+        "image 309"
+      ],
+      [
+        "1:7528",
+        "image 310"
+      ],
+      [
+        "1:7529",
+        "image 311"
+      ],
+      [
+        "1:7530",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7535",
+    "name": "DD1",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 16832,
+    "y": 4540,
+    "text": [
+      "So we want to prioritize ease and creative precision on-the-go",
+      "Asset generation via circling, snappy grid, instagram-esque experience",
+      "Asset library",
+      "AI generate assets",
+      "Add Text",
+      "Brush",
+      "Editing on your phone can feel like a huge commitment",
+      "Asset library and art direction responsiveness",
+      "A lightweight tool for creative flow",
+      "An intentional and minimal toolkit",
+      "1. Constrained simplicity & ease",
+      "2. Creative precision"
+    ],
+    "children": [
+      [
+        "1:7536",
+        "So we want to prioritize ease and creative precision on-the-go"
+      ],
+      [
+        "1:7537",
+        "Asset generation via circling, snappy grid, instagram-esque experience"
+      ],
+      [
+        "1:7538",
+        "Phone"
+      ],
+      [
+        "1:7548",
+        "image 304"
+      ],
+      [
+        "1:7549",
+        "Editing on your phone can feel like a huge commitment"
+      ],
+      [
+        "1:7550",
+        "image 309"
+      ],
+      [
+        "1:7551",
+        "image 310"
+      ],
+      [
+        "1:7552",
+        "image 311"
+      ],
+      [
+        "1:7553",
+        "Asset library and art direction responsiveness"
+      ],
+      [
+        "1:7554",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7559",
+    "name": "DD1",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 18922,
+    "y": 4540,
+    "text": [
+      "Creativity St",
+      "Simplicity, Fun, Precision",
+      "So we want to prioritize ease and creative precision on-the-go",
+      "Asset library and art direction responsiveness",
+      "Asset library",
+      "AI generate assets",
+      "Add Text",
+      "Brush",
+      "Editing on your phone can feel like a huge commitment",
+      "While designing adit, we asked important questions:",
+      "HMW create a lightweight tool for creative flow? ",
+      "HMW to design for the subway technically and aesthetically?",
+      "HMW to retain users and encourage aditing as a subway activity?",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "Deep Dive Line",
+      "Product Questions, Iterations",
+      "A lightweight tool for creative flow",
+      "An intentional and minimal toolkit",
+      "1. Constrained simplicity & ease",
+      "2. Creative precision"
+    ],
+    "children": [
+      [
+        "1:7560",
+        "Agenda Item"
+      ],
+      [
+        "1:7563",
+        "So we want to prioritize ease and creative precision on-the-go"
+      ],
+      [
+        "1:7564",
+        "Asset library and art direction responsiveness"
+      ],
+      [
+        "1:7565",
+        "Phone"
+      ],
+      [
+        "1:7575",
+        "image 304"
+      ],
+      [
+        "1:7576",
+        "Editing on your phone can feel like a huge commitment"
+      ],
+      [
+        "1:7577",
+        "image 309"
+      ],
+      [
+        "1:7578",
+        "image 310"
+      ],
+      [
+        "1:7579",
+        "image 311"
+      ],
+      [
+        "1:7580",
+        "Outline"
+      ],
+      [
+        "1:7586",
+        "Main line"
+      ],
+      [
+        "1:7597",
+        "Deep Dive line"
+      ],
+      [
+        "1:7604",
+        "Names"
+      ],
+      [
+        "1:7615",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7620",
+    "name": "DD1",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 20971,
+    "y": 4540,
+    "text": [
+      "Creativity St",
+      "Simplicity, Fun, Precision",
+      "While designing adit, we asked important questions:",
+      "HMW create a lightweight tool for creative flow? ",
+      "HMW to design for the subway technically and aesthetically?",
+      "HMW to retain users and encourage aditing as a subway activity?",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "Deep Dive Line",
+      "Product Questions, Iterations",
+      "So we want to prioritize ease and creative precision on-the-go",
+      "Asset library and art direction responsiveness",
+      "Asset library",
+      "AI generate assets",
+      "Add Text",
+      "Brush",
+      "Editing on your phone can feel like a huge commitment",
+      "A lightweight tool for creative flow",
+      "An intentional and minimal toolkit",
+      "1. Constrained simplicity & ease",
+      "2. Creative precision"
+    ],
+    "children": [
+      [
+        "1:7621",
+        "Agenda Item"
+      ],
+      [
+        "1:7624",
+        "Outline"
+      ],
+      [
+        "1:7630",
+        "Main line"
+      ],
+      [
+        "1:7641",
+        "Deep Dive line"
+      ],
+      [
+        "1:7648",
+        "Names"
+      ],
+      [
+        "1:7659",
+        "So we want to prioritize ease and creative precision on-the-go"
+      ],
+      [
+        "1:7660",
+        "Asset library and art direction responsiveness"
+      ],
+      [
+        "1:7661",
+        "Phone"
+      ],
+      [
+        "1:7671",
+        "image 304"
+      ],
+      [
+        "1:7672",
+        "Editing on your phone can feel like a huge commitment"
+      ],
+      [
+        "1:7673",
+        "image 309"
+      ],
+      [
+        "1:7674",
+        "image 310"
+      ],
+      [
+        "1:7675",
+        "image 311"
+      ],
+      [
+        "1:7676",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7681",
+    "name": "DD1",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 23020,
+    "y": 4540,
+    "text": [
+      "Creativity St",
+      "Simplicity, Fun, Precision",
+      "While designing adit, we asked important questions:",
+      "HMW create a lightweight tool for creative flow? ",
+      "HMW to design for the subway technically and aesthetically?",
+      "HMW to retain users and encourage aditing as a subway activity?",
+      "Solution Av",
+      "Adit, Happy path",
+      "Solution Av",
+      "The Scope, Happy path",
+      "Deep Dive Line",
+      "Product Questions, Iterations",
+      "So we want to prioritize ease and creative precision on-the-go",
+      "Asset library and art direction responsiveness",
+      "Asset library",
+      "AI generate assets",
+      "Add Text",
+      "Brush",
+      "Editing on your phone can feel like a huge commitment",
+      "Subway St",
+      "Technicality, Visual Design",
+      "A lightweight tool for creative flow",
+      "An intentional and minimal toolkit",
+      "1. Constrained simplicity & ease",
+      "2. Creative precision"
+    ],
+    "children": [
+      [
+        "1:7682",
+        "Agenda Item"
+      ],
+      [
+        "1:7685",
+        "Outline"
+      ],
+      [
+        "1:7691",
+        "Main line"
+      ],
+      [
+        "1:7702",
+        "Deep Dive line"
+      ],
+      [
+        "1:7709",
+        "Names"
+      ],
+      [
+        "1:7720",
+        "So we want to prioritize ease and creative precision on-the-go"
+      ],
+      [
+        "1:7721",
+        "Asset library and art direction responsiveness"
+      ],
+      [
+        "1:7722",
+        "Phone"
+      ],
+      [
+        "1:7732",
+        "image 304"
+      ],
+      [
+        "1:7733",
+        "Editing on your phone can feel like a huge commitment"
+      ],
+      [
+        "1:7734",
+        "image 309"
+      ],
+      [
+        "1:7735",
+        "image 310"
+      ],
+      [
+        "1:7736",
+        "image 311"
+      ],
+      [
+        "1:7737",
+        "Agenda Item"
+      ],
+      [
+        "1:7740",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7988",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 4186,
+    "y": 6901,
+    "text": [
+      "Creativity St",
+      "Simplicity, Fun, Precision",
+      "While designing adit, we asked important questions:",
+      "HMW create a lightweight tool for creative flow? ",
+      "HMW to design for the subway technically and aesthetically?",
+      "HMW to retain users and encourage aditing as a subway activity?",
+      "Subway St",
+      "Technicality, Visual Design",
+      "A lightweight tool for creative flow",
+      "An intentional and minimal toolkit",
+      "1. Constrained simplicity & ease",
+      "2. Creative precision"
+    ],
+    "children": [
+      [
+        "1:7989",
+        "Agenda Item"
+      ],
+      [
+        "1:7992",
+        "Outline"
+      ],
+      [
+        "1:7998",
+        "Main line"
+      ],
+      [
+        "1:8009",
+        "Deep Dive line"
+      ],
+      [
+        "1:8016",
+        "Agenda Item"
+      ],
+      [
+        "1:8019",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:8024",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 6360,
+    "y": 6901,
+    "text": [
+      "Creativity St",
+      "Simplicity, Fun, Precision",
+      "While designing adit, we asked important questions:",
+      "HMW create a lightweight tool for creative flow? ",
+      "HMW to design for the subway technically and aesthetically?",
+      "HMW to retain users and encourage aditing as a subway activity?",
+      "Subway St",
+      "Technicality, Visual Design",
+      "An experience for the subway",
+      "An experience for the subway"
+    ],
+    "children": [
+      [
+        "1:8025",
+        "image 312"
+      ],
+      [
+        "1:8026",
+        "Agenda Item"
+      ],
+      [
+        "1:8029",
+        "Outline"
+      ],
+      [
+        "1:8035",
+        "Main line"
+      ],
+      [
+        "1:8046",
+        "Deep Dive line"
+      ],
+      [
+        "1:8053",
+        "Agenda Item"
+      ],
+      [
+        "1:8056",
+        "An experience for the subway"
+      ],
+      [
+        "1:8057",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:8059",
+    "name": "DD2",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 8472,
+    "y": 6901,
+    "text": [
+      "Creativity St",
+      "Simplicity, Fun, Precision",
+      "While designing adit, we asked important questions:",
+      "HMW create a lightweight tool for creative flow? ",
+      "HMW to design for the subway technically and aesthetically?",
+      "HMW to retain users and encourage aditing as a subway activity?",
+      "Subway St",
+      "Technicality, Visual Design",
+      "What does it mean to be a subway app, technically and aesthetically?",
+      "An experience for the subway"
+    ],
+    "children": [
+      [
+        "1:8060",
+        "Agenda Item"
+      ],
+      [
+        "1:8063",
+        "Outline"
+      ],
+      [
+        "1:8069",
+        "Main line"
+      ],
+      [
+        "1:8080",
+        "Deep Dive line"
+      ],
+      [
+        "1:8087",
+        "Agenda Item"
+      ],
+      [
+        "1:8090",
+        "image 312"
+      ],
+      [
+        "1:8091",
+        "What does it mean to be a subway app, technically and aesthetically?"
+      ],
+      [
+        "1:8092",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:8094",
+    "name": "DD2",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 10585,
+    "y": 6901,
+    "text": [
+      "What does it mean to be a subway app, technically and aesthetically?",
+      "Asynch Distributed Queue",
+      "An experience for the subway",
+      "1. Unstable wifi environment"
+    ],
+    "children": [
+      [
+        "1:8095",
+        "image 312"
+      ],
+      [
+        "1:8096",
+        "What does it mean to be a subway app, technically and aesthetically?"
+      ],
+      [
+        "1:8097",
+        "Asynch Distributed Queue"
+      ],
+      [
+        "1:8098",
+        "屏幕截图 2025-10-04 133148 1"
+      ],
+      [
+        "1:8099",
+        "Loading animation"
+      ],
+      [
+        "1:8112",
+        "Selection"
+      ],
+      [
+        "1:8126",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:8129",
+    "name": "DD2",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 12759,
+    "y": 6901,
+    "text": [
+      "What does it mean to be a subway app, technically and aesthetically?",
+      "Asynch Distributed Queue",
+      "Fun and functional VisD",
+      "An experience for the subway",
+      "1. Unstable wifi environment",
+      "2. Iconic and playful subway"
+    ],
+    "children": [
+      [
+        "1:8130",
+        "Wall"
+      ],
+      [
+        "1:8133",
+        "image 312"
+      ],
+      [
+        "1:8134",
+        "What does it mean to be a subway app, technically and aesthetically?"
+      ],
+      [
+        "1:8135",
+        "屏幕截图 2025-10-04 133148 1"
+      ],
+      [
+        "1:8136",
+        "Asynch Distributed Queue"
+      ],
+      [
+        "1:8137",
+        "Loading animation"
+      ],
+      [
+        "1:8150",
+        "Selection"
+      ],
+      [
+        "1:8164",
+        "Fun and functional VisD"
+      ],
+      [
+        "1:8165",
+        "Group 74"
+      ],
+      [
+        "1:8170",
+        "image 100"
+      ],
+      [
+        "1:8171",
+        "Frame 149"
+      ],
+      [
+        "1:8175",
+        "Frame 150"
+      ],
+      [
+        "1:8179",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:8183",
+    "name": "DD2",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 14819,
+    "y": 6901,
+    "text": [
+      "Subway St",
+      "Technicality, Visual Design",
+      "Subway St",
+      "Technicality, Visual Design",
+      "What does it mean to be a subway app, technically and aesthetically?",
+      "Asynch Distributed Queue",
+      "Fun and functional VisD",
+      "An experience for the subway",
+      "1. Unstable wifi environment",
+      "2. Iconic and playful subway"
+    ],
+    "children": [
+      [
+        "1:8184",
+        "Agenda Item"
+      ],
+      [
+        "1:8187",
+        "Main line"
+      ],
+      [
+        "1:8198",
+        "Deep Dive line"
+      ],
+      [
+        "1:8205",
+        "Agenda Item"
+      ],
+      [
+        "1:8208",
+        "Wall"
+      ],
+      [
+        "1:8211",
+        "image 312"
+      ],
+      [
+        "1:8212",
+        "What does it mean to be a subway app, technically and aesthetically?"
+      ],
+      [
+        "1:8213",
+        "屏幕截图 2025-10-04 133148 1"
+      ],
+      [
+        "1:8214",
+        "Asynch Distributed Queue"
+      ],
+      [
+        "1:8215",
+        "Fun and functional VisD"
+      ],
+      [
+        "1:8216",
+        "Loading animation"
+      ],
+      [
+        "1:8229",
+        "Selection"
+      ],
+      [
+        "1:8243",
+        "Group 74"
+      ],
+      [
+        "1:8248",
+        "image 100"
+      ],
+      [
+        "1:8249",
+        "Frame 149"
+      ],
+      [
+        "1:8253",
+        "Frame 150"
+      ],
+      [
+        "1:8257",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:8261",
+    "name": "DD2",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 16939,
+    "y": 6901,
+    "text": [
+      "Subway St",
+      "Technicality, Visual Design",
+      "Subway St",
+      "Technicality, Visual Design",
+      "Fun and functional VisD",
+      "An experience for the subway",
+      "1. Unstable wifi environment",
+      "2. Iconic and playful subway"
+    ],
+    "children": [
+      [
+        "1:8262",
+        "Agenda Item"
+      ],
+      [
+        "1:8265",
+        "Main line"
+      ],
+      [
+        "1:8276",
+        "Deep Dive line"
+      ],
+      [
+        "1:8283",
+        "Agenda Item"
+      ],
+      [
+        "1:8286",
+        "Wall"
+      ],
+      [
+        "1:8289",
+        "Fun and functional VisD"
+      ],
+      [
+        "1:8290",
+        "Group 74"
+      ],
+      [
+        "1:8295",
+        "image 100"
+      ],
+      [
+        "1:8296",
+        "Frame 149"
+      ],
+      [
+        "1:8300",
+        "Frame 150"
+      ],
+      [
+        "1:8304",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7745",
+    "name": "DD2",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 19059,
+    "y": 6901,
+    "text": [
+      "Subway St",
+      "Technicality, Visual Design",
+      "Retention St",
+      "Inspiration, Validation",
+      "Fun and functional VisD",
+      "An experience for the subway",
+      "1. Unstable wifi environment",
+      "2. Iconic and playful subway"
+    ],
+    "children": [
+      [
+        "1:7746",
+        "Agenda Item"
+      ],
+      [
+        "1:7749",
+        "Main line"
+      ],
+      [
+        "1:7760",
+        "Deep Dive line"
+      ],
+      [
+        "1:7767",
+        "Agenda Item"
+      ],
+      [
+        "1:7770",
+        "Wall"
+      ],
+      [
+        "1:7773",
+        "Fun and functional VisD"
+      ],
+      [
+        "1:7774",
+        "Group 74"
+      ],
+      [
+        "1:7779",
+        "image 100"
+      ],
+      [
+        "1:7780",
+        "Frame 149"
+      ],
+      [
+        "1:7784",
+        "Frame 150"
+      ],
+      [
+        "1:7788",
+        "Black Frame"
+      ],
+      [
+        "1:7792",
+        "image 317"
+      ],
+      [
+        "1:7793",
+        "image 318"
+      ]
+    ]
+  },
+  {
+    "id": "1:8308",
+    "name": "Feed Opening",
+    "page": "Final Presentation",
+    "w": 509,
+    "h": 183,
+    "x": 9511,
+    "y": 8757,
+    "text": [],
+    "children": []
+  },
+  {
+    "id": "1:7794",
+    "name": "DD2",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 4186,
+    "y": 9318,
+    "text": [
+      "Subway St",
+      "Technicality, Visual Design",
+      "Retention St",
+      "Inspiration, Validation",
+      "Fun and functional VisD"
+    ],
+    "children": [
+      [
+        "1:7795",
+        "Agenda Item"
+      ],
+      [
+        "1:7798",
+        "Main line"
+      ],
+      [
+        "1:7809",
+        "Deep Dive line"
+      ],
+      [
+        "1:7816",
+        "Agenda Item"
+      ],
+      [
+        "1:7819",
+        "Wall"
+      ],
+      [
+        "1:7822",
+        "Fun and functional VisD"
+      ],
+      [
+        "1:7823",
+        "Group 74"
+      ],
+      [
+        "1:7828",
+        "image 100"
+      ],
+      [
+        "1:7829",
+        "Frame 149"
+      ],
+      [
+        "1:7833",
+        "Frame 150"
+      ],
+      [
+        "1:7837",
+        "Black Frame"
+      ],
+      [
+        "1:7838",
+        "image 317"
+      ],
+      [
+        "1:7839",
+        "image 318"
+      ]
+    ]
+  },
+  {
+    "id": "1:7867",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 6360,
+    "y": 9318,
+    "text": [
+      "Subway St",
+      "Technicality, Visual Design",
+      "Retention St",
+      "Inspiration, Validation",
+      "More than just an adit"
+    ],
+    "children": [
+      [
+        "1:7868",
+        "Agenda Item"
+      ],
+      [
+        "1:7871",
+        "Main line"
+      ],
+      [
+        "1:7882",
+        "Deep Dive line"
+      ],
+      [
+        "1:7889",
+        "Agenda Item"
+      ],
+      [
+        "1:7892",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7923",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 8472,
+    "y": 9318,
+    "text": [
+      "Subway St",
+      "Technicality, Visual Design",
+      "Retention St",
+      "Inspiration, Validation",
+      "More than just an adit",
+      "Comp 1_2 1"
+    ],
+    "children": [
+      [
+        "1:7924",
+        "Agenda Item"
+      ],
+      [
+        "1:7927",
+        "Main line"
+      ],
+      [
+        "1:7938",
+        "Deep Dive line"
+      ],
+      [
+        "1:7945",
+        "Agenda Item"
+      ],
+      [
+        "1:7948",
+        "Black Frame"
+      ],
+      [
+        "1:7951",
+        "Feed Opening"
+      ]
+    ]
+  },
+  {
+    "id": "1:7954",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 10585,
+    "y": 9318,
+    "text": [
+      "Subway St",
+      "Technicality, Visual Design",
+      "Retention St",
+      "Inspiration, Validation",
+      "More than just an adit",
+      "CleanShot_2025-10-21_at_10.30.36 1",
+      "skull_2 1"
+    ],
+    "children": [
+      [
+        "1:7955",
+        "Agenda Item"
+      ],
+      [
+        "1:7958",
+        "Main line"
+      ],
+      [
+        "1:7969",
+        "Deep Dive line"
+      ],
+      [
+        "1:7976",
+        "Agenda Item"
+      ],
+      [
+        "1:7979",
+        "Black Frame"
+      ],
+      [
+        "1:7982",
+        "Group 75"
+      ],
+      [
+        "1:7985",
+        "Group 75"
+      ]
+    ]
+  },
+  {
+    "id": "1:7895",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 12697,
+    "y": 9318,
+    "text": [
+      "Subway St",
+      "Technicality, Visual Design",
+      "Retention St",
+      "Inspiration, Validation",
+      "More than just an adit"
+    ],
+    "children": [
+      [
+        "1:7896",
+        "Agenda Item"
+      ],
+      [
+        "1:7899",
+        "Main line"
+      ],
+      [
+        "1:7910",
+        "Deep Dive line"
+      ],
+      [
+        "1:7917",
+        "Agenda Item"
+      ],
+      [
+        "1:7920",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7840",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 14819,
+    "y": 9318,
+    "text": [
+      "Subway St",
+      "Technicality, Visual Design",
+      "Retention St",
+      "Inspiration, Validation"
+    ],
+    "children": [
+      [
+        "1:7841",
+        "Agenda Item"
+      ],
+      [
+        "1:7844",
+        "Main line"
+      ],
+      [
+        "1:7855",
+        "Deep Dive line"
+      ],
+      [
+        "1:7862",
+        "Agenda Item"
+      ],
+      [
+        "1:7865",
+        "Black Frame"
+      ]
+    ]
+  },
+  {
+    "id": "1:7866",
+    "name": "Transition",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 16939,
+    "y": 9318,
+    "text": [],
+    "children": []
+  },
+  {
+    "id": "1:6377",
+    "name": "Conclusion",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 0,
+    "y": 11819,
+    "text": [
+      "Problem Av",
+      "Context, Observations",
+      "Solution Av",
+      "Adit, Happy path",
+      "Ad editing in transit",
+      "Ad editing in transit",
+      "Now if you see this ad on the subway...",
+      "How would you adit it?",
+      "Ad editing in transit",
+      "Have you see this ad?"
+    ],
+    "children": [
+      [
+        "1:6378",
+        "Black border"
+      ],
+      [
+        "1:6379",
+        "Black border"
+      ],
+      [
+        "1:6380",
+        "Main line"
+      ],
+      [
+        "1:6389",
+        "Names"
+      ],
+      [
+        "1:6397",
+        "Background crop"
+      ],
+      [
+        "1:6485",
+        "Text"
+      ],
+      [
+        "1:6488",
+        "Horizontals"
+      ],
+      [
+        "1:6489",
+        "Horizontals"
+      ],
+      [
+        "1:6490",
+        "Verticals"
+      ],
+      [
+        "1:6491",
+        "Verticals"
+      ]
+    ]
+  },
+  {
+    "id": "1:6492",
+    "name": "Conclusion",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 2084,
+    "y": 11819,
+    "text": [
+      "Ad editing in transit",
+      "Ad editing in transit",
+      "Now if you see this ad on the subway...",
+      "How would you adit it?",
+      "Ad editing in transit",
+      "Have you see this ad?"
+    ],
+    "children": [
+      [
+        "1:6493",
+        "Background crop"
+      ],
+      [
+        "1:6581",
+        "Text"
+      ],
+      [
+        "1:6584",
+        "Verticals"
+      ],
+      [
+        "1:6585",
+        "Horizontals"
+      ],
+      [
+        "1:6586",
+        "Horizontals"
+      ],
+      [
+        "1:6587",
+        "Verticals"
+      ]
+    ]
+  },
+  {
+    "id": "1:6588",
+    "name": "Conclusion",
+    "page": "Final Presentation",
+    "w": 1920,
+    "h": 1080,
+    "x": 4227,
+    "y": 11819,
+    "text": [
+      "Ad editing in transit",
+      "Ad editing in transit",
+      "Now if you see this ad on the subway...",
+      "How would you adit it?",
+      "Ad editing in transit",
+      "Have you see this ad?"
+    ],
+    "children": [
+      [
+        "1:6589",
+        "Background crop"
+      ],
+      [
+        "1:6677",
+        "Text"
+      ],
+      [
+        "1:6680",
+        "Verticals"
+      ],
+      [
+        "1:6681",
+        "Horizontals"
+      ],
+      [
+        "1:6682",
+        "Horizontals"
+      ],
+      [
+        "1:6683",
+        "Verticals"
+      ]
+    ]
+  }
+]
