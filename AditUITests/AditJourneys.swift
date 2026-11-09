@@ -119,7 +119,46 @@ final class AditJourneys: XCTestCase {
     XCTAssertTrue(app.buttons["Finish"].exists)
     app.buttons["Save draft and close"].tap()
     app.buttons["Delete draft"].firstMatch.tap()
-    app.buttons.matching(identifier: "Delete draft").allElementsBoundByIndex.last!.tap()
+    app.sheets.buttons["Delete draft"].tap()
     XCTAssertTrue(app.staticTexts["No drafts yet"].waitForExistence(timeout: 4))
   }
+  func testRollingPostersAndSlidingNavigation() {
+    let watch = app.buttons["Back Market, 318 reframes"]
+    XCTAssertTrue(watch.waitForExistence(timeout: 10))
+    let originalValue = watch.value as? String
+    let originalFrame = watch.frame
+    let changed = XCTNSPredicateExpectation(
+      predicate: NSPredicate { _, _ in (watch.value as? String) != originalValue },
+      object: nil)
+    XCTAssertEqual(XCTWaiter.wait(for: [changed], timeout: 10), .completed)
+    XCTAssertEqual(watch.frame.minX, originalFrame.minX, accuracy: 1)
+    XCTAssertEqual(watch.frame.height, originalFrame.height, accuracy: 1)
+    capture("Rolling posters and glass navigation")
+
+    let pill = app.otherElements["navigationPill"]
+    // The icons retain separate button targets inside the shared glass capsule.
+    app.buttons["Explore"].tap()
+    let author = app.staticTexts["whereissvsdmerch"].firstMatch
+    for _ in 0..<7 where !author.isHittable { app.swipeUp() }
+    XCTAssertTrue(author.isHittable)
+    app.buttons["Artist profile"].tap()
+    app.buttons["Explore"].tap()
+    XCTAssertTrue(author.isHittable, "Returning to Explore preserves its scroll position")
+    XCTAssertTrue(pill.exists)
+    if pill.exists {
+      pill.coordinate(withNormalizedOffset: CGVector(dx: 0.83, dy: 0.5))
+        .press(
+          forDuration: 0.1,
+          thenDragTo:
+            pill.coordinate(withNormalizedOffset: CGVector(dx: 0.15, dy: 0.5)))
+    } else {
+      app.buttons["Station wall"].tap()
+    }
+    XCTAssertTrue(app.buttons["Choose station"].waitForExistence(timeout: 4))
+    app.buttons["Explore"].tap()
+    app.buttons["Artist profile"].tap()
+    app.buttons["Station wall"].tap()
+    XCTAssertTrue(app.buttons["Friend.com, 596 reframes"].isHittable)
+  }
+
 }

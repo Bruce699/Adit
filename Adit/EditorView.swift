@@ -16,6 +16,8 @@ private enum Tool: String, CaseIterable {
 }
 struct EditorView: View {
   @EnvironmentObject var store: Store
+  @Environment(\.scenePhase) private var scenePhase
+  @Environment(\.accessibilityReduceMotion) private var reduceMotion
   @State private var art: Artwork
   @State private var tool = Tool.magic
   @State private var undoStack: [[Layer]] = []
@@ -94,7 +96,8 @@ struct EditorView: View {
         VStack(spacing: 0) {
           Spacer(minLength: 0)
           ZStack {
-            ArtworkSurface(art: art, now: now).shadow(color: .black.opacity(0.18), radius: 7, y: 5)
+            ArtworkSurface(art: art, now: now).equatable().shadow(
+              color: .black.opacity(0.18), radius: 7, y: 5)
             if moving != nil {
               Canvas { context, bounds in
                 var grid = Path()
@@ -194,14 +197,15 @@ struct EditorView: View {
     }.background(Color(white: 0.985)).tint(.black).onAppear {
       tripStart = activeJob?.started ?? Date()
     }
-    .task {
+    .task(id: scenePhase) {
+      guard scenePhase == .active else { return }
       while !Task.isCancelled {
         now = Date()
-        do { try await Task.sleep(for: .milliseconds(180)) } catch { return }
+        do { try await Task.sleep(for: .seconds(1)) } catch { return }
       }
     }
-    .task(id: liveTimes) {
-      guard liveTimes else { return }
+    .task(id: "\(liveTimes)-\(scenePhase)") {
+      guard liveTimes, scenePhase == .active else { return }
       let stops = art.station.nextStop
       while !Task.isCancelled {
         checkingTrain = true
@@ -251,6 +255,7 @@ struct EditorView: View {
           Image("train").resizable().frame(width: 29, height: 13).offset(
             x: min(geo.size.width - 29, max(0, geo.size.width * progress - 27)), y: -9)
         }.frame(maxHeight: .infinity, alignment: .bottom)
+          .animation(reduceMotion ? nil : .linear(duration: 1), value: progress)
       }.frame(height: 21)
       HStack {
         Text(art.station.short)

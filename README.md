@@ -9,6 +9,8 @@ A native iPhone app for remixing subway ads during a commute. The opening statio
   <img src="Research/Simulator/Explore.png" width="23%" alt="Explore gallery">
 </p>
 
+[Watch the upward ad transition](Research/Simulator/Rolling.mp4). The floating navigation capsule supports tapping and dragging between destinations, with native Liquid Glass on iOS 26.
+
 ## Run
 
 Open **Adit.xcodeproj** in Xcode, select the **Adit** scheme, choose an iPhone simulator and press **⌘R**. The deployment target is iOS 17. The project includes its assets and has no package dependencies. To install on a physical iPhone, select your development team in Signing & Capabilities and choose the connected phone as the run destination.

@@ -231,7 +231,8 @@ struct ProfileView: View {
               Button {
                 resume(art)
               } label: {
-                MetalFrame { ArtworkSurface(art: art) }.frame(maxHeight: 210)
+                MetalFrame { ArtworkSurface(art: art) }.frame(height: 210)
+                  .contentShape(Rectangle())
               }.accessibilityLabel("Resume draft")
               HStack {
                 Text(Campaign.get(art.campaign).name).font(.caption)
@@ -239,7 +240,7 @@ struct ProfileView: View {
                 Button {
                   removal = art
                 } label: {
-                  Image(systemName: "trash")
+                  Image(systemName: "trash").frame(width: 44, height: 44).contentShape(Rectangle())
                 }.accessibilityLabel("Delete draft")
               }
             }.padding(.horizontal, 32).padding(.bottom, 16)

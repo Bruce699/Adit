@@ -47,47 +47,39 @@ struct Shell: View {
           }
         }
       } else {
-        VStack(spacing: 0) {
-          switch tab {
-          case .wall:
+        TabView(selection: $tab) {
+          VStack(spacing: 0) {
             Button {
               stationPicker = true
             } label: {
               Sign(
                 title: store.data.station == .grand
                   ? "Grand Central-42\nStreet Station" : store.data.station.rawValue)
-            }.buttonStyle(.plain).accessibilityLabel("Choose station").padding(.horizontal, 15)
-              .padding(.top, 14)
-            WallView(space: space, pulse: stationPulse, select: { selected = $0 })
-          case .explore: ExploreView(select: { selected = $0 })
-          case .profile: ProfileView(select: { selected = $0 }, resume: { editing = $0 })
+            }.buttonStyle(.plain).accessibilityLabel("Choose station")
+              .padding(.horizontal, 15).padding(.top, 14)
+            WallView(
+              space: space, pulse: stationPulse,
+              rotating: selected == nil && editing == nil && tab == .wall, select: { selected = $0 }
+            )
+          }.background(WallTiles().ignoresSafeArea()).toolbar(.hidden, for: .tabBar).tag(
+            Destination.wall
+          ).tabItem {
+            Label("Station wall", systemImage: "house")
           }
-        }
-        .safeAreaInset(edge: .bottom, spacing: 0) { Color.clear.frame(height: 0) }
-        VStack {
-          Spacer()
-          HStack {
-            ForEach(Destination.allCases, id: \.self) { dest in
-              Spacer()
-              Button {
-                withAnimation(reduce ? nil : .easeOut(duration: 0.2)) { tab = dest }
-              } label: {
-                Image(systemName: dest.symbol).font(
-                  .system(size: 21, weight: dest == tab ? .bold : .regular)
-                )
-                .foregroundStyle(dest == tab ? .black : Color(white: 0.36)).frame(
-                  width: 48, height: 48
-                )
-                .background(dest == tab ? .white : .clear, in: Circle())
-              }.accessibilityLabel(dest.rawValue).accessibilityAddTraits(
-                dest == tab ? .isSelected : [])
-              Spacer()
+          ExploreView(select: { selected = $0 })
+            .background(WallTiles().ignoresSafeArea())
+            .toolbar(.hidden, for: .tabBar)
+            .tag(Destination.explore).tabItem {
+              Label("Explore", systemImage: "rectangle.topthird.inset.filled")
             }
-          }.padding(.top, 24).padding(.bottom, 4).background(
-            LinearGradient(
-              colors: [.white.opacity(0), .white.opacity(0.91), .white], startPoint: .top,
-              endPoint: .bottom
-            ).ignoresSafeArea(edges: .bottom))
+          ProfileView(select: { selected = $0 }, resume: { editing = $0 })
+            .background(WallTiles().ignoresSafeArea())
+            .toolbar(.hidden, for: .tabBar)
+            .tag(Destination.profile).tabItem { Label("Artist profile", systemImage: "person") }
+        }
+        .toolbar(.hidden, for: .tabBar)
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+          NavigationPill(selection: $tab).padding(.top, 8).padding(.bottom, 6)
         }
       }
       if launch && !reduce {
@@ -225,7 +217,9 @@ struct StationSelector: View {
 struct WallView: View {
   @EnvironmentObject var store: Store
   @Environment(\.accessibilityReduceMotion) var reduce
+  @Environment(\.scenePhase) private var scenePhase
   let space: Namespace.ID, pulse: Int
+  let rotating: Bool
   let select: (Selection) -> Void
   @State private var entered = false
   @State private var alternate = false
@@ -267,7 +261,16 @@ struct WallView: View {
                       carousel: doc == nil))
                 } label: {
                   ZStack(alignment: i == 0 ? .topTrailing : .bottomLeading) {
-                    MetalFrame { ArtworkSurface(art: art).id(art.base).transition(.opacity) }
+                    MetalFrame {
+                      ZStack {
+                        ArtworkSurface(art: art).id(art.base)
+                          .transition(
+                            reduce
+                              ? .identity
+                              : .asymmetric(
+                                insertion: .move(edge: .bottom), removal: .move(edge: .top)))
+                      }.aspectRatio(art.ratio, contentMode: .fit).clipped()
+                    }
                     HStack(spacing: 3) {
                       Image("reframe").renderingMode(.template).resizable().frame(
                         width: 16, height: 16)
@@ -282,7 +285,13 @@ struct WallView: View {
                       .offset(x: i == 0 ? 10 : -3, y: i == 0 ? -10 : 8)
                   }.matchedGeometryEffect(id: doc?.id.uuidString ?? c.id, in: space)
                 }.buttonStyle(.plain)
-                  .frame(width: width * [0.49, 0.4, 0.39, 0.455][i])
+                  .frame(
+                    width: width * [0.49, 0.4, 0.39, 0.455][i],
+                    height: (width * [0.49, 0.4, 0.39, 0.455][i] - 12) / c.ratio + 12
+                  )
+                  .contentShape(Rectangle())
+                  .accessibilityElement(children: .ignore)
+                  .accessibilityAddTraits(.isButton)
                   .rotationEffect(.degrees([-7, 9, -5.5, 7.5][i]))
                   .position(
                     x: width * [0.31, 0.72, 0.27, 0.69][i],
@@ -293,6 +302,7 @@ struct WallView: View {
                     reduce ? nil : .spring(duration: 0.45).delay(Double(i) * 0.09), value: entered
                   )
                   .accessibilityLabel("\(c.name), \(count) reframes")
+                  .accessibilityValue(art.base)
               }
             }.frame(width: width, height: width * 1.56)
             if !olderPosts.isEmpty {
@@ -313,12 +323,11 @@ struct WallView: View {
         }.scrollIndicators(.hidden)
       }
     }.onAppear { entered = true }
-      .task(id: store.data.station) {
-        alternate = false
-        guard !reduce else { return }
+      .task(id: "\(store.data.station.rawValue)-\(scenePhase)-\(reduce)-\(rotating)") {
+        guard !reduce, scenePhase == .active, rotating else { return }
         while !Task.isCancelled {
           do { try await Task.sleep(for: .seconds(7)) } catch { return }
-          withAnimation(.easeInOut(duration: 0.65)) { alternate.toggle() }
+          withAnimation(.timingCurve(0.65, 0, 0.25, 1, duration: 0.85)) { alternate.toggle() }
         }
       }
   }
@@ -413,5 +422,69 @@ struct ResultView: View {
     }.padding(.bottom, 8).tint(.black).sheet(
       isPresented: Binding(get: { share != nil }, set: { if !$0 { share = nil } })
     ) { if let share { SharePanel(image: share) } }
+  }
+}
+
+struct NavigationPill: View {
+  @Binding var selection: Destination
+  @Environment(\.accessibilityReduceMotion) private var reduceMotion
+  @Namespace private var highlight
+  private let segmentWidth: CGFloat = 76
+
+  var body: some View {
+    HStack(spacing: 0) {
+      ForEach(Destination.allCases, id: \.self) { destination in
+        Button {
+          selection = destination
+        } label: {
+          Image(systemName: destination.symbol)
+            .font(.system(size: 22, weight: selection == destination ? .semibold : .regular))
+            .foregroundStyle(selection == destination ? .primary : .secondary)
+            .frame(width: segmentWidth, height: 48)
+            .background {
+              if selection == destination {
+                Capsule().fill(.white.opacity(0.6))
+                  .overlay { Capsule().strokeBorder(.white.opacity(0.65), lineWidth: 0.5) }
+                  .matchedGeometryEffect(id: "selection", in: highlight)
+              }
+            }
+            .contentShape(Capsule())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(destination.rawValue)
+        .accessibilityAddTraits(selection == destination ? .isSelected : [])
+      }
+    }
+    .padding(5)
+    .modifier(NavigationGlass())
+    .animation(
+      reduceMotion ? nil : .spring(response: 0.32, dampingFraction: 0.82), value: selection
+    )
+    .simultaneousGesture(
+      DragGesture(minimumDistance: 8).onChanged { value in
+        let index = min(2, max(0, Int((value.location.x - 5) / segmentWidth)))
+        let destination = Destination.allCases[index]
+        if selection != destination { selection = destination }
+      }
+    )
+    .accessibilityElement(children: .contain)
+    .accessibilityIdentifier("navigationPill")
+  }
+}
+
+private struct NavigationGlass: ViewModifier {
+  @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+
+  @ViewBuilder func body(content: Content) -> some View {
+    if reduceTransparency {
+      content.background(Color(.systemBackground), in: Capsule())
+        .overlay { Capsule().strokeBorder(Color(.separator), lineWidth: 0.5) }
+    } else if #available(iOS 26.0, *) {
+      content.glassEffect(.regular.interactive(), in: Capsule())
+    } else {
+      content.background(.ultraThinMaterial, in: Capsule())
+        .overlay { Capsule().strokeBorder(.white.opacity(0.75), lineWidth: 0.7) }
+        .shadow(color: .black.opacity(0.12), radius: 12, y: 5)
+    }
   }
 }

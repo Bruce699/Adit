@@ -132,7 +132,14 @@ struct LocalResult: View {
     }
   }
 }
-struct ArtworkSurface: View {
+struct ArtworkSurface: View, Equatable {
+  static func == (lhs: Self, rhs: Self) -> Bool {
+    lhs.art == rhs.art
+      && lhs.art.layers.allSatisfy {
+        $0.pending(at: lhs.now) == $0.pending(at: rhs.now)
+      }
+  }
+
   let art: Artwork
   var now = Date()
   var body: some View {

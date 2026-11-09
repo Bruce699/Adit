@@ -30,7 +30,7 @@ The 11 distinct embedded Figma streams could not be verified in full. The file e
 ## Interaction fidelity
 
 - **Launch and discovery** use the original wordmark and route graphic, followed by separately animated posters. The title card fades. The hand-authored train-line drawing in the pitch is only partially reproduced.
-- **Poster selection** preserves a swipeable campaign carousel, reframe counts, rounded sheet and primary action. The three final-study destinations use native buttons over a floating bottom gradient.
+- **Poster selection** preserves a swipeable campaign carousel, reframe counts, rounded sheet and primary action. The three destinations share a Liquid Glass capsule with a sliding selection. Tabs retain their scroll position, and the capsule supports taps and drags. Earlier iOS versions use an ultra-thin material fallback.
 - **Editing** preserves the centered print, campaign palette, four tools, circled prompt region and pending stripes. The strip above the canvas includes explicit history and exit controls. The Friend text tool can clear its original headline before placing new type. Other raster text stays part of the base artwork.
 - **The train queue** persists each region and its deadline. The offline renderer can reproduce the demonstrated Joe portrait. Eligible devices expose Apple's Image Playground as a separate prompt action. A selected generated image is copied into application support, reused in the library and included in exports. Its image-generation UI needs validation on a supported physical phone.
 - **Publication** renders the editable document into its station frame. Matched geometry links the result and the latest wall print. The design's precise easing, color pulses and every intermediate frame could not be compared against the unavailable embedded streams.
@@ -51,3 +51,13 @@ Xcode 27.2 built the app and UI test bundle for arm64. All three XCTest journeys
 | Wall to publication | Open Friend, reject an empty prompt, queue the Joe portrait, draw and undo/redo, replace the headline with YOU, resume the draft, publish and relaunch. The wall retains the new print and its count of 597. |
 
 The final images under [Simulator](Simulator) are screenshots from those test runs. Comparison against the design study led to corrections to the station caption layout, reframe glyph, train silhouette, profile artwork and complete erasure of the printed headline during replacement. Live MTA decoding was checked separately against the agency feed. Physical-device Image Playground, remote community synchronization and frame-accurate parity with unexported videos were outside the verified simulator paths.
+
+## Motion and performance refinement
+
+Automatic ad changes now slide upward through the fixed metal frame. The outgoing print moves off the top as the next enters from the bottom. Rotation pauses during poster selection and editing, and respects Reduce Motion. The bottom navigation uses native Liquid Glass on iOS 26, with a moving capsule selection and drag navigation.
+
+The editor clock refreshes once per second instead of every 180 milliseconds. Unchanged artwork is reused while pending-request deadlines continue to update. Clock and transit polling pause in the background. Native tab containers retain scroll position across navigation.
+
+The second verification round passed all four XCTest journeys on the iPhone 17 Pro simulator. The added journey verifies that poster bounds stay fixed during rotation, Explore preserves its scroll position, the pill supports drag navigation, and rapid tab switches remain usable. The round also corrected duplicate native tab-bar targets, poster hit bounds during motion, and the draft deletion test's confirmation-sheet targeting. Draft controls now have a 44-point delete target.
+
+A final simulator recording was sampled through several ad changes. [Rolling.mp4](Simulator/Rolling.mp4) shows the upward transition inside stationary frames. The final glass navigation and restored tiled surface are visible in [Station.png](Simulator/Station.png). Performance changes were checked in the simulator. Physical-device frame-rate and energy profiling remain unmeasured.
