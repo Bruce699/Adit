@@ -1,0 +1,64 @@
+<div id="station-material-lab">
+  <div class="viz-row"><span>Grand Central–42 Street Station</span><span class="text-small text-muted">Drag to rotate · Scroll to zoom</span></div>
+  <div class="stage"><canvas aria-label="Interactive 3D subway station sign with adjustable perspective and material lighting">3D subway station sign</canvas><span class="fallback text-small" hidden>3D rendering is unavailable in this browser.</span></div>
+  <div class="controls">
+    <label class="form-label">Horizontal angle <output data-value="yaw"></output><input class="form-range" data-key="yaw" type="range" min="-75" max="75" step="1" aria-label="Horizontal angle"></label>
+    <label class="form-label">Vertical angle <output data-value="pitch"></output><input class="form-range" data-key="pitch" type="range" min="-65" max="65" step="1" aria-label="Vertical angle"></label>
+    <label class="form-label">Light direction <output data-value="light"></output><input class="form-range" data-key="light" type="range" min="-180" max="180" step="1" aria-label="Light direction"></label>
+    <label class="form-label">Light height <output data-value="height"></output><input class="form-range" data-key="height" type="range" min="0" max="85" step="1" aria-label="Light height"></label>
+    <label class="form-label">Surface roughness <output data-value="rough"></output><input class="form-range" data-key="rough" type="range" min="0.06" max="1" step="0.01" aria-label="Surface roughness"></label>
+    <label class="form-label">Texture depth <output data-value="grain"></output><input class="form-range" data-key="grain" type="range" min="0" max="1" step="0.01" aria-label="Texture depth"></label>
+  </div>
+  <div class="text-small text-muted" aria-live="polite" data-status></div>
+</div>
+<style>
+#station-material-lab{max-width:1100px;margin:0 auto;color:var(--foreground);display:grid;gap:calc(var(--font-size-base)*1)}
+#station-material-lab .viz-row{justify-content:space-between;padding-right:95px}
+#station-material-lab .stage{position:relative;height:clamp(350px,55vh,620px);min-width:0}
+#station-material-lab canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+#station-material-lab canvas:active{cursor:grabbing}
+#station-material-lab .controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(var(--font-size-base)*1)}
+#station-material-lab output{float:right;font-variant-numeric:tabular-nums}
+#station-material-lab .fallback{position:absolute;left:0;top:40%}
+@media(max-width:520px){#station-material-lab .controls{grid-template-columns:repeat(2,minmax(0,1fr))}#station-material-lab .stage{height:260px}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+<script>
+(()=>{
+const root=document.getElementById('station-material-lab');
+const canvas=root.querySelector('canvas');
+const defaults={yaw:-6.37046875,pitch:-7.074375,light:-35,height:46,rough:0.62,grain:0.3,distance:6.5};
+let s={...defaults};
+function restore(value){const v=value?.privateContent?.stationBoard;if(v) for(const k of Object.keys(defaults)) if(Number.isFinite(v[k]))s[k]=v[k];}
+restore(window.openai?.widgetState);
+let renderer;
+try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});}catch(e){root.querySelector('.fallback').hidden=false;return;}
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(38,1,.1,50),group=new THREE.Group();scene.add(group);
+const deg=THREE.MathUtils.degToRad;
+let seed=24;const rand=()=>{seed=(1664525*seed+1013904223)>>>0;return seed/4294967296};
+const texCanvas=document.createElement('canvas');texCanvas.width=2048;texCanvas.height=432;
+const ctx=texCanvas.getContext('2d');ctx.fillStyle='#222321';ctx.fillRect(0,0,2048,432);
+for(let i=0;i<70000;i++){const v=rand()>.5?255:0;ctx.fillStyle=`rgba(${v},${v},${v},${rand()*.025})`;ctx.fillRect(rand()*2048,rand()*432,1+rand()*2,1);}
+ctx.fillStyle='#f5f5f0';ctx.fillRect(0,48,2048,4);ctx.font='500 115px Arial, Helvetica, sans-serif';ctx.textBaseline='alphabetic';ctx.fillText('Grand Central-42',48,185);ctx.fillText('Street Station',48,315);
+ctx.beginPath();ctx.arc(1900,214,86,0,Math.PI*2);ctx.fillStyle='#008943';ctx.fill();ctx.font='500 125px Arial, Helvetica, sans-serif';ctx.textAlign='center';ctx.fillStyle='#ffffff';ctx.fillText('6',1900,257);
+const faceTexture=new THREE.CanvasTexture(texCanvas);faceTexture.colorSpace=THREE.SRGBColorSpace;faceTexture.anisotropy=renderer.capabilities.getMaxAnisotropy();
+const noiseCanvas=document.createElement('canvas');noiseCanvas.width=1024;noiseCanvas.height=256;const nctx=noiseCanvas.getContext('2d');const pixels=nctx.createImageData(1024,256);for(let i=0;i<pixels.data.length;i+=4){let v=108+rand()*40;pixels.data[i]=pixels.data[i+1]=pixels.data[i+2]=v;pixels.data[i+3]=255;}nctx.putImageData(pixels,0,0);const bump=new THREE.CanvasTexture(noiseCanvas);bump.wrapS=bump.wrapT=THREE.RepeatWrapping;bump.repeat.set(3,3);
+const face=new THREE.MeshPhysicalMaterial({map:faceTexture,roughness:s.rough,metalness:.18,bumpMap:bump,bumpScale:.006,clearcoat:.16,clearcoatRoughness:.5});
+const metal=new THREE.MeshStandardMaterial({color:0x979a98,roughness:.38,metalness:.95});const darkMetal=new THREE.MeshStandardMaterial({color:0x292c2b,roughness:.46,metalness:.75});
+function box(w,h,d,material,x,y,z){const mesh=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),material);mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;group.add(mesh);return mesh;}
+box(4.84,1.03,.13,darkMetal,0,0,0);
+const panel=new THREE.Mesh(new THREE.PlaneGeometry(4.78,1.008),face);panel.position.z=.068;group.add(panel);
+const ambient=new THREE.HemisphereLight(0xe4edff,0x484132,1.4);scene.add(ambient);
+const key=new THREE.DirectionalLight(0xfff2dc,3.8);key.castShadow=true;key.shadow.mapSize.set(1024,1024);scene.add(key);
+const fill=new THREE.DirectionalLight(0xb2c9e8,.7);fill.position.set(-4,1,4);scene.add(fill);
+const envCanvas=document.createElement('canvas');envCanvas.width=1024;envCanvas.height=512;const ectx=envCanvas.getContext('2d');ectx.fillStyle='#42484e';ectx.fillRect(0,0,1024,512);const gradient=ectx.createLinearGradient(0,0,0,512);gradient.addColorStop(0,'#c0c5cc');gradient.addColorStop(.45,'#626975');gradient.addColorStop(1,'#20201d');ectx.fillStyle=gradient;ectx.fillRect(0,0,1024,512);ectx.fillStyle='#ffffff';ectx.fillRect(420,80,280,62);ectx.fillStyle='#c3cfdd';ectx.fillRect(40,190,100,210);const envTexture=new THREE.CanvasTexture(envCanvas);envTexture.mapping=THREE.EquirectangularReflectionMapping;envTexture.colorSpace=THREE.SRGBColorSpace;const pmrem=new THREE.PMREMGenerator(renderer);const envTarget=pmrem.fromEquirectangular(envTexture);scene.environment=envTarget.texture;envTexture.dispose();pmrem.dispose();
+const status=root.querySelector('[data-status]');
+function update(){group.rotation.set(deg(s.pitch),deg(s.yaw),0);camera.position.set(0,0,s.distance);camera.lookAt(0,0,0);const a=deg(s.light),h=deg(s.height);key.position.set(Math.sin(a)*6*Math.cos(h),Math.sin(h)*6,Math.cos(a)*6*Math.cos(h));scene.environmentRotation?.set(0,a,0);face.roughness=s.rough;face.bumpScale=s.grain*.025;face.clearcoatRoughness=Math.max(.08,s.rough*.8);metal.roughness=.18+s.rough*.45;scene.environmentIntensity=1;for(const el of root.querySelectorAll('[data-key]')){const k=el.dataset.key;el.value=s[k];root.querySelector(`[data-value="${k}"]`).textContent=['rough','grain'].includes(k)?Math.round(s[k]*100)+'%':Math.round(s[k])+'°';}renderer.render(scene,camera);}
+function save(){status.textContent=`View ${Math.round(s.yaw)}° / ${Math.round(s.pitch)}° · Roughness ${Math.round(s.rough*100)}% · Texture ${Math.round(s.grain*100)}%`;if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{subject:'Grand Central–42 Street Station sign',...s},privateContent:{stationBoard:s}}).catch(()=>{});}
+for(const el of root.querySelectorAll('[data-key]')){el.addEventListener('input',()=>{s[el.dataset.key]=Number(el.value);update();});el.addEventListener('change',save);}
+let drag=null;canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,yaw:s.yaw,pitch:s.pitch};canvas.setPointerCapture(e.pointerId);});canvas.addEventListener('pointermove',e=>{if(!drag)return;s.yaw=Math.max(-75,Math.min(75,drag.yaw+(e.clientX-drag.x)*.28));s.pitch=Math.max(-65,Math.min(65,drag.pitch+(e.clientY-drag.y)*.28));update();});const end=()=>{if(drag){drag=null;save();}};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);canvas.addEventListener('lostpointercapture',end);let wheelTimer;canvas.addEventListener('wheel',e=>{e.preventDefault();s.distance=Math.max(4.4,Math.min(11,s.distance+e.deltaY*.005));update();clearTimeout(wheelTimer);wheelTimer=setTimeout(save,200);},{passive:false});
+function resize(){const w=canvas.parentElement.clientWidth,h=canvas.parentElement.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.fov=w<500?52:38;camera.updateProjectionMatrix();update();}new ResizeObserver(resize).observe(canvas.parentElement);
+window.addEventListener('openai:set_globals',e=>{restore(e.detail?.globals?.widgetState);update();});resize();
+})();
+</script>

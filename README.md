@@ -1,5 +1,11 @@
 # Adit
 
+## Station board canvas
+
+The [station board canvas](sites/station-board/README.md) is an interactive 3D study of 496 MTA station signs. Open Layer previews it directly from `sites/station-board/dist`; no installation or build is required. Drag a sign to tilt all signs together, or scroll to explore the collection.
+
+## iPhone app
+
 A native iPhone app for remixing subway ads during a commute. The opening station is Grand Central–42 Street. Artwork, drafts, votes, bookmarks and published reframes live on the device.
 
 <p>
