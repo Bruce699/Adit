@@ -11,7 +11,8 @@ const surface = controls('Sign materials & lighting', {
  lightIntensity: [3.8,0,8,.1], roughness: [.62,0,1,.01], textureDepth: [.41,0,1,.01],
  metalness: [.18,0,1,.01], exposure: [1.05,.3,2,.05],
 });
-const s={yaw:1,pitch:2,distance:6.5};
+// A longer camera distance softens perspective while the projection preserves sign size.
+const s={yaw:1,pitch:2,distance:14};
 const view={zoom:1,x:0,y:0,width:0,height:0};
 const stage=document.getElementById('viewport');
 const canvas=document.getElementById('scene'),root=document.getElementById('boards');
@@ -25,8 +26,8 @@ const noiseCanvas=document.createElement('canvas');noiseCanvas.width=1024;noiseC
 const face=new THREE.MeshPhysicalMaterial({map:null,roughness:.62,metalness:.18,bumpMap:bump,bumpScale:.41*.025,clearcoat:.16,clearcoatRoughness:.62*.8});
 const metal=new THREE.MeshStandardMaterial({color:0x979a98,roughness:.38,metalness:.95});const darkMetal=new THREE.MeshStandardMaterial({color:0x292c2b,roughness:.46,metalness:.75});
 function box(w,h,d,material,x,y,z){const mesh=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),material);mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;group.add(mesh);return mesh;}
-box(4.84,1.03,.13,darkMetal,0,0,0);
-const panel=new THREE.Mesh(new THREE.PlaneGeometry(4.78,1.008),face);panel.position.z=.068;group.add(panel);
+box(4.84,1.03,.06,darkMetal,0,0,0);
+const panel=new THREE.Mesh(new THREE.PlaneGeometry(4.78,1.008),face);panel.position.z=.032;group.add(panel);
 const ambient=new THREE.HemisphereLight(0xe4edff,0x484132,1.4);scene.add(ambient);
 const key=new THREE.DirectionalLight(0xfff2dc,3.8);key.castShadow=false;key.shadow.mapSize.set(1024,1024);scene.add(key);
 const fill=new THREE.DirectionalLight(0xb2c9e8,.7);fill.position.set(-4,1,4);scene.add(fill);
@@ -64,7 +65,7 @@ function render(){requested=false;renderer.setScissorTest(false);renderer.clear(
   if(r.bottom<0||r.top>innerHeight||r.right<0||r.left>innerWidth)continue;
   visible++;
   const aspect=r.width/r.height;
-  const tangent=Math.max(.515,2.42/aspect)/(s.distance-.069);
+  const tangent=Math.max(.515,2.42/aspect)/(s.distance-.033);
   camera.aspect=aspect;
   camera.fov=THREE.MathUtils.radToDeg(2*Math.atan(tangent*overscan/.88));
   camera.updateProjectionMatrix();
