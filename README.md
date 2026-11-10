@@ -21,6 +21,8 @@ A native iPhone app for remixing subway ads during a commute. The opening statio
 
 Open **Adit.xcodeproj** in Xcode, select the **Adit** scheme, choose an iPhone simulator and press **⌘R**. The deployment target is iOS 17. The project includes its assets and has no package dependencies. To install on a physical iPhone, select your development team in Signing & Capabilities and choose the connected phone as the run destination.
 
+On a Mac with Xcode installed, `bash scripts/run-ios-simulator.sh` builds, installs, and launches Adit in an available iPhone simulator. It prefers an already booted iPhone, and accepts a simulator UDID as an optional argument. Existing app data is retained.
+
 The station wall and finished-post screen use the weathered boards from the station canvas, with the saved seed 24 wear settings. Tap the station sign to browse all 496 MTA entries, including Staten Island Railway; search by station, route, line or borough. Each board is bundled for offline use with its original route badges.
 
 Tilt an iPhone to reveal the raised edges of station signs and poster frames. In Simulator, drag a sign or frame to preview the perspective. Reduce Motion keeps the surfaces still.
