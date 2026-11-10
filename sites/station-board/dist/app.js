@@ -56,7 +56,27 @@ const fragment=document.createDocumentFragment();const tiles=stations.map(st=>{c
 document.getElementById('caption').textContent=`${stations.length} station boards`;
 let requested=false;function schedule(){if(!requested){requested=true;requestAnimationFrame(render);}}
 function render(){requested=false;renderer.setScissorTest(false);renderer.clear();renderer.setScissorTest(true);group.rotation.set(deg(s.pitch),deg(s.yaw),0);let visible=0;
- for(const {el,st} of tiles){const r=el.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight||r.right<0||r.left>innerWidth)continue;visible++;const aspect=r.width/r.height;camera.aspect=aspect;let tangent=0;for(const x of [-2.42,2.42])for(const y of [-.515,.515])for(const z of [-.065,.069]){const point=new THREE.Vector3(x,y,z).applyEuler(group.rotation);tangent=Math.max(tangent,Math.abs(point.y)/(s.distance-point.z),Math.abs(point.x)/(s.distance-point.z)/aspect);}camera.fov=THREE.MathUtils.radToDeg(2*Math.atan(tangent/.88));camera.updateProjectionMatrix();face.map=textureFor(st,r.width);renderer.setViewport(r.left,innerHeight-r.bottom,r.width,r.height);renderer.setScissor(Math.max(0,r.left),Math.max(0,innerHeight-r.bottom),Math.min(innerWidth,r.right)-Math.max(0,r.left),Math.min(innerHeight,r.bottom)-Math.max(0,r.top));renderer.render(scene,camera);}
+ // Keep projection tied to the unrotated sign, so tilting never changes camera scale.
+ // The larger viewport leaves room for tilted corners without clipping at the tile edges.
+ const overscan=6;
+ for(const {el,st} of tiles){
+  const r=el.getBoundingClientRect();
+  if(r.bottom<0||r.top>innerHeight||r.right<0||r.left>innerWidth)continue;
+  visible++;
+  const aspect=r.width/r.height;
+  const tangent=Math.max(.515,2.42/aspect)/(s.distance-.069);
+  camera.aspect=aspect;
+  camera.fov=THREE.MathUtils.radToDeg(2*Math.atan(tangent*overscan/.88));
+  camera.updateProjectionMatrix();
+  face.map=textureFor(st,r.width);
+  const width=r.width*overscan,height=r.height*overscan;
+  const left=r.left-(width-r.width)/2,top=r.top-(height-r.height)/2;
+  renderer.setViewport(left,innerHeight-top-height,width,height);
+  renderer.setScissor(0,0,innerWidth,innerHeight);
+  renderer.clearDepth();
+  renderer.render(scene,camera);
+ }
+
  while(cache.size>Math.max(64,visible+8)){const key=cache.keys().next().value;cache.get(key).dispose();cache.delete(key);}
  canvas.dataset.yaw=s.yaw;canvas.dataset.pitch=s.pitch;canvas.dataset.visible=visible;
 }
