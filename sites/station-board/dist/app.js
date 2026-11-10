@@ -86,10 +86,27 @@ function layout(){
  document.documentElement.style.setProperty("--canvas-background",v.background);
  fit();
 }
+let spring=null;
+function stopSpring(){if(spring)cancelAnimationFrame(spring.frame);spring=null;}
+function returnTilt(yaw,pitch){
+ stopSpring();
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){s.yaw=yaw;s.pitch=pitch;schedule();return;}
+ const motion={yaw,pitch,fromYaw:s.yaw,fromPitch:s.pitch,start:performance.now(),frame:0};
+ spring=motion;
+ function tick(now){
+  const t=(now-motion.start)/1000;
+  // A lightly underdamped spring: gentle overshoot, then a quiet settle.
+  const decay=Math.exp(-10*t)*(Math.cos(8*t)+1.25*Math.sin(8*t));
+  s.yaw=yaw+(motion.fromYaw-yaw)*decay;s.pitch=pitch+(motion.fromPitch-pitch)*decay;
+  if(t>=1.1){s.yaw=yaw;s.pitch=pitch;spring=null;}else motion.frame=requestAnimationFrame(tick);
+  schedule();
+ }
+ motion.frame=requestAnimationFrame(tick);
+}
 let previousAngle=null;
 function applySurface(){
  const v=surface.get();
- if(!previousAngle||v.angle.x!==previousAngle.x||v.angle.y!==previousAngle.y){s.yaw=v.angle.x;s.pitch=v.angle.y;previousAngle={...v.angle};}
+ if(!previousAngle||v.angle.x!==previousAngle.x||v.angle.y!==previousAngle.y){stopSpring();s.yaw=v.angle.x;s.pitch=v.angle.y;previousAngle={...v.angle};}
  face.roughness=v.roughness;face.bumpScale=v.textureDepth*.025;
  face.clearcoatRoughness=v.roughness*.8;face.metalness=v.metalness;
  const a=deg(v.lightDirection),h=deg(v.lightHeight);
@@ -119,9 +136,12 @@ const pointers=new Map();let drag=null,pinch=null;
 stage.addEventListener('pointerdown',e=>{
  if(e.button!==0&&e.button!==1)return;
  e.preventDefault();stage.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
- const el=e.target.closest('.board');if(el)el.focus({preventScroll:true});
- drag={x:e.clientX,y:e.clientY,panX:view.x,panY:view.y,yaw:s.yaw,pitch:s.pitch,tilt:!!el&&!e.shiftKey&&e.button===0};
- if(pointers.size===2){const [a,b]=[...pointers.values()];pinch={distance:Math.hypot(a.x-b.x,a.y-b.y),zoom:view.zoom,x:(a.x+b.x)/2,y:(a.y+b.y)/2};drag=null;}
+ const el=e.target.closest('.board'),tilt=!!el&&!e.shiftKey&&e.button===0;
+ const restYaw=drag?.restYaw??spring?.yaw??s.yaw,restPitch=drag?.restPitch??spring?.pitch??s.pitch;
+ if(tilt)stopSpring();
+ drag={x:e.clientX,y:e.clientY,panX:view.x,panY:view.y,yaw:s.yaw,pitch:s.pitch,restYaw,restPitch,tilt};
+ stage.classList.add('is-dragging');
+ if(pointers.size===2){const [a,b]=[...pointers.values()];pinch={distance:Math.hypot(a.x-b.x,a.y-b.y),zoom:view.zoom,x:(a.x+b.x)/2,y:(a.y+b.y)/2};returnTilt(restYaw,restPitch);drag=null;}
 });
 stage.addEventListener('pointermove',e=>{
  if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
@@ -132,13 +152,18 @@ stage.addEventListener('pointermove',e=>{
  if(drag.tilt){s.yaw=THREE.MathUtils.clamp(drag.yaw+(e.clientX-drag.x)*.28,-75,75);s.pitch=THREE.MathUtils.clamp(drag.pitch+(e.clientY-drag.y)*.28,-65,65);schedule();}
  else{view.x=drag.panX+(e.clientX-drag.x)*panSensitivity;view.y=drag.panY+(e.clientY-drag.y)*panSensitivity;updateView();}
 });
-function end(e){pointers.delete(e.pointerId);drag=null;pinch=null;}
+function end(e){
+ if(!pointers.delete(e.pointerId))return;
+ if(drag?.tilt)returnTilt(drag.restYaw,drag.restPitch);
+ drag=null;pinch=null;
+ if(!pointers.size)stage.classList.remove('is-dragging');
+}
 stage.addEventListener('pointerup',end);stage.addEventListener('pointercancel',end);stage.addEventListener('lostpointercapture',end);
 window.addEventListener('keydown',e=>{
  if(e.target.matches('input,textarea,select'))return;
  if(['+','=','-','0'].includes(e.key)){e.preventDefault();if(e.key==='0')fit();else zoomAt(view.zoom*(e.key==='-'?1/1.3:1.3));return;}
  if(!e.target.closest('.board')||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;
- e.preventDefault();const step=e.shiftKey?5:1;
+ e.preventDefault();stopSpring();const step=e.shiftKey?5:1;
  if(e.key==='ArrowLeft')s.yaw-=step;if(e.key==='ArrowRight')s.yaw+=step;if(e.key==='ArrowUp')s.pitch-=step;if(e.key==='ArrowDown')s.pitch+=step;
  s.yaw=THREE.MathUtils.clamp(s.yaw,-75,75);s.pitch=THREE.MathUtils.clamp(s.pitch,-65,65);schedule();
 });

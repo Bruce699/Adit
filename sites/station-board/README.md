@@ -1,6 +1,6 @@
 # New York station board canvas
 
-Interactive 3D study of 496 MTA station entries, including Staten Island Railway. The boards form a roughly square composition. Scroll horizontally or vertically to pan, pinch to zoom, drag the background to pan, and drag any board to tilt all boards together. Shift-drag also pans when starting on a sign. Use the +/− buttons or keys to zoom; Fit or the 0 key returns to the entire composition. The 100% button shows the signs at full size. Arrow keys on a focused board also adjust the shared angle.
+Interactive 3D study of 496 MTA station entries, including Staten Island Railway. The boards form a roughly square composition. Scroll horizontally or vertically to pan, pinch to zoom, drag the background to pan, and drag any board to tilt all boards together. On release, the signs gently spring back to their starting angle. Shift-drag also pans when starting on a sign. Use the +/− buttons or keys to zoom; Fit or the 0 key returns to the entire composition. The 100% button shows the signs at full size. Arrow keys on a focused board also adjust the shared angle.
 
 ## Run locally
 
