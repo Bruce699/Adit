@@ -213,10 +213,21 @@ struct WallTiles: View {
   }
 }
 struct Sign: View {
-  let title: String
+  var title = ""
   var badge = "6"
   var tint = Color.transitGreen
-  var body: some View {
+  var station: Station? = nil
+  @ViewBuilder var body: some View {
+    if let station {
+      Image("station-\(station.board.id)").renderingMode(.original).resizable().scaledToFit()
+        .aspectRatio(1024.0 / 216.0, contentMode: .fit)
+        .accessibilityLabel("\(station.title), \(station.board.routes.joined(separator: ", "))")
+        .modifier(FloatingSurface(depth: 2, strength: 0.55, perspective: 0.12, interactive: true))
+    } else {
+      customSign
+    }
+  }
+  private var customSign: some View {
     HStack {
       Text(title).font(.custom("HelveticaNeue-Medium", size: 21, relativeTo: .headline)).tracking(
         -0.5
@@ -291,6 +302,8 @@ private struct FloatingSurface: ViewModifier {
   @State private var preview = CGSize.zero
   let depth: CGFloat
   let strength: Double
+  var perspective: CGFloat = 0.35
+  var interactive = false
 
   func body(content: Content) -> some View {
     let tilt =
@@ -320,8 +333,8 @@ private struct FloatingSurface: ViewModifier {
               y: CGFloat(step) * (0.65 + tilt.height * 0.45))
         }
       }
-      .rotation3DEffect(.degrees(-tilt.height * 7), axis: (x: 1, y: 0, z: 0), perspective: 0.35)
-      .rotation3DEffect(.degrees(tilt.width * 9), axis: (x: 0, y: 1, z: 0), perspective: 0.35)
+      .rotation3DEffect(.degrees(-tilt.height * 7), axis: (x: 1, y: 0, z: 0), perspective: perspective)
+      .rotation3DEffect(.degrees(tilt.width * 9), axis: (x: 0, y: 1, z: 0), perspective: perspective)
       .offset(x: tilt.width * 2, y: tilt.height * 2)
       .shadow(
         color: .black.opacity(0.24), radius: depth + 3,
@@ -334,11 +347,14 @@ private struct FloatingSurface: ViewModifier {
     DragGesture(minimumDistance: 12)
       .onChanged { value in
         #if targetEnvironment(simulator)
-          guard !reduceMotion else { return }
-          preview = CGSize(
-            width: max(-1, min(1, value.translation.width / 100)),
-            height: max(-1, min(1, value.translation.height / 100)))
+          let canPreview = true
+        #else
+          let canPreview = interactive
         #endif
+        guard canPreview && !reduceMotion else { return }
+        preview = CGSize(
+          width: max(-1, min(1, value.translation.width / 100)),
+          height: max(-1, min(1, value.translation.height / 100)))
       }
       .onEnded { _ in
         withAnimation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.8)) {

@@ -1,5 +1,5 @@
 import {controls} from './lib/open-layer-controls.js';
-import {weatherBoard} from './weathering.js';
+import {createBoardMaps, DEFAULT_WEAR, noiseCanvas} from './board-texture.js';
 (async()=>{
 'use strict';
 const composition = controls('Station composition', {
@@ -14,8 +14,8 @@ const surface = controls('Sign materials & lighting', {
 });
 let wearVariation=0;
 const wear = controls('Procedural wear', {
- amount: [1,0,1,.01], dust: [1,0,1,.01], scratches: [.55,0,1,.01],
- cracks: [.41,0,1,.01], bumps: [.55,0,1,.01], seed: [24,1,9999,1],
+ amount: [DEFAULT_WEAR.amount,0,1,.01], dust: [DEFAULT_WEAR.dust,0,1,.01], scratches: [DEFAULT_WEAR.scratches,0,1,.01],
+ cracks: [DEFAULT_WEAR.cracks,0,1,.01], bumps: [DEFAULT_WEAR.bumps,0,1,.01], seed: [DEFAULT_WEAR.seed,1,9999,1],
  randomize: {type:'action',label:'Randomize wear',run:()=>{wearVariation++;clearWear();}},
 });
 // A longer camera distance softens perspective while the projection preserves sign size.
@@ -28,8 +28,7 @@ const stations=await response.json();
 const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;renderer.autoClear=false;
 const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(38,1,.1,50),group=new THREE.Group();scene.add(group);const deg=THREE.MathUtils.degToRad;
-let seed=24;const rand=()=>{seed=(1664525*seed+1013904223)>>>0;return seed/4294967296;};
-const noiseCanvas=document.createElement('canvas');noiseCanvas.width=1024;noiseCanvas.height=256;const nctx=noiseCanvas.getContext('2d');const pixels=nctx.createImageData(1024,256);for(let i=0;i<pixels.data.length;i+=4){let v=108+rand()*40;pixels.data[i]=pixels.data[i+1]=pixels.data[i+2]=v;pixels.data[i+3]=255;}nctx.putImageData(pixels,0,0);const bump=new THREE.CanvasTexture(noiseCanvas);bump.wrapS=bump.wrapT=THREE.RepeatWrapping;bump.repeat.set(3,3);
+const bump=new THREE.CanvasTexture(noiseCanvas);bump.wrapS=bump.wrapT=THREE.RepeatWrapping;bump.repeat.set(3,3);
 const face=new THREE.MeshPhysicalMaterial({map:null,roughness:.62,metalness:.18,bumpMap:bump,bumpScale:.41*.025,clearcoat:.16,clearcoatRoughness:.62*.8});
 const metal=new THREE.MeshStandardMaterial({color:0x979a98,roughness:.38,metalness:.95});const darkMetal=new THREE.MeshStandardMaterial({color:0x292c2b,roughness:.46,metalness:.75});
 function box(w,h,d,material,x,y,z){const mesh=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),material);mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;group.add(mesh);return mesh;}
@@ -46,30 +45,18 @@ function disposeTextures(textures){textures.color.dispose();textures.bump.dispos
 function clearWear(){for(const textures of cache.values())disposeTextures(textures);cache.clear();schedule();}
 let previousWearSeed=wear.get().seed;
 wear.subscribe(()=>{if(wear.get().seed!==previousWearSeed){wearVariation=0;previousWearSeed=wear.get().seed;}clearWear();});
-const routeColors={1:'#ee352e',2:'#ee352e',3:'#ee352e',4:'#00933c',5:'#00933c',6:'#00933c',7:'#b933ad',A:'#0039a6',C:'#0039a6',E:'#0039a6',B:'#ff6319',D:'#ff6319',F:'#ff6319',M:'#ff6319',G:'#6cbe45',J:'#996633',Z:'#996633',L:'#a7a9ac',N:'#fccc0a',Q:'#fccc0a',R:'#fccc0a',W:'#fccc0a',S:'#808183',SIR:'#0039a6'};
-const base=document.createElement('canvas');base.width=1024;base.height=216;const bx=base.getContext('2d');bx.fillStyle='#222321';bx.fillRect(0,0,1024,216);for(let i=0;i<35000;i++){const v=rand()>.5?255:0;bx.fillStyle=`rgba(${v},${v},${v},${rand()*.025})`;bx.fillRect(rand()*1024,rand()*216,1,1);}bx.fillStyle='#f5f5f0';bx.fillRect(0,24,1024,2);
+
 function textureFor(st,width){
  const resolution=width*renderer.getPixelRatio()>512?1024:width*renderer.getPixelRatio()>256?512:256;
  const cacheKey=st.id+":"+resolution;
  if(cache.has(cacheKey)){const t=cache.get(cacheKey);cache.delete(cacheKey);cache.set(cacheKey,t);return t;}
- const c=document.createElement('canvas');c.width=1024;c.height=216;const ctx=c.getContext('2d');ctx.drawImage(base,0,0);
- const services=st.routes.length?st.routes:['S'];const count=services.length;const rows=count>3?2:1,cols=Math.ceil(count/rows);const radius=count===1?43:count<=3?29:23,step=radius*2+10;const blockWidth=cols*step+12;const nameWidth=1024-blockWidth-64;
- let label=st.name.replace(/\bAv\b/g,'Avenue').replace(/\bSt(?=-|$)/g,'Street').replace(/\bSq\b/g,'Square').replace(/\bPk\b/g,'Park').replace(/\bPkwy\b/g,'Parkway');
- let lines=label.endsWith(' Street')?[label.slice(0,-7),'Street Station']:[label,'Station'];
- let font=57.5;ctx.font=`500 ${font}px Arial,Helvetica,sans-serif`;
- if(ctx.measureText(lines[0]).width>nameWidth && !label.endsWith(' Street')){const words=label.split(' ');let best=lines;let score=Infinity;for(let i=1;i<words.length;i++){const trial=[words.slice(0,i).join(' '),words.slice(i).join(' ')+' Station'];const width=Math.max(...trial.map(t=>ctx.measureText(t).width));if(width<score){score=width;best=trial;}}lines=best;}
- while(Math.max(...lines.map(t=>ctx.measureText(t).width))>nameWidth&&font>28){font-=1;ctx.font=`500 ${font}px Arial,Helvetica,sans-serif`;}
- ctx.fillStyle='#f5f5f0';ctx.textBaseline='alphabetic';ctx.fillText(lines[0],24,92.5);ctx.fillText(lines[1],24,157.5);
- services.forEach((route,i)=>{const col=i%cols,row=Math.floor(i/cols);const x=1024-blockWidth/2+(col-(cols-1)/2)*step;const y=107+(row-(rows-1)/2)*step;ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fillStyle=routeColors[route]||'#808183';ctx.fill();ctx.font=`500 ${route==='SIR'?radius*.8:radius*1.45}px Arial,Helvetica,sans-serif`;ctx.fillStyle=['N','Q','R','W'].includes(route)?'#171717':'#fff';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(route,x,y+2);});
- const heightCanvas=document.createElement('canvas');heightCanvas.width=1024;heightCanvas.height=216;
- const heightContext=heightCanvas.getContext('2d');heightContext.drawImage(noiseCanvas,0,0,1024,216);
- weatherBoard(ctx,heightContext,st.id,`${wear.get().seed}:${wearVariation}`,wear.get());
+ const maps=createBoardMaps(st,wear.get(),`${wear.get().seed}:${wearVariation}`);
  function makeTexture(source,color=false){
   const scaled=document.createElement('canvas');scaled.width=resolution;scaled.height=Math.round(resolution*216/1024);scaled.getContext('2d').drawImage(source,0,0,scaled.width,scaled.height);
   const texture=new THREE.CanvasTexture(scaled);if(color)texture.colorSpace=THREE.SRGBColorSpace;
   texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());return texture;
  }
- const textures={color:makeTexture(c,true),bump:makeTexture(heightCanvas)};
+ const textures={color:makeTexture(maps.color,true),bump:makeTexture(maps.height)};
  cache.set(cacheKey,textures);return textures;
 }
 const fragment=document.createDocumentFragment();const tiles=stations.map(st=>{const el=document.createElement('div');el.className='board';el.tabIndex=0;el.setAttribute('role','img');el.setAttribute('aria-label',`${st.name}, ${st.routes.join(', ')}. Drag to tilt all boards.`);el.dataset.station=st.id;fragment.append(el);return {el,st};});root.append(fragment);

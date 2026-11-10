@@ -23,6 +23,34 @@ final class AditJourneys: XCTestCase {
     start.tap()
     XCTAssertTrue(app.buttons["AI brush"].waitForExistence(timeout: 6))
   }
+  func testStationBoardCollectionAndPersistence() {
+    let choose = app.buttons["Choose station"]
+    XCTAssertTrue(choose.waitForExistence(timeout: 10))
+    choose.tap()
+    let search = app.searchFields.firstMatch
+    XCTAssertTrue(search.waitForExistence(timeout: 5))
+    search.tap()
+    search.typeText("Tottenville")
+    let station = app.buttons["Tottenville Station"]
+    XCTAssertTrue(station.waitForExistence(timeout: 5))
+    station.tap()
+    XCTAssertEqual(choose.value as? String, "Tottenville Station")
+    capture("Weathered Staten Island board")
+    app.terminate()
+    app.launchArguments = ["--ui-test"]
+    app.launch()
+    XCTAssertTrue(choose.waitForExistence(timeout: 10))
+    XCTAssertEqual(choose.value as? String, "Tottenville Station")
+    // A station beyond the original four campaign offsets must still open the editor.
+    let poster = app.buttons.matching(NSPredicate(format: "label ENDSWITH ' reframes'")).firstMatch
+    XCTAssertTrue(poster.waitForExistence(timeout: 5))
+    poster.tap()
+    let reframe = app.buttons["Reframe"]
+    XCTAssertTrue(reframe.waitForExistence(timeout: 5))
+    reframe.tap()
+    XCTAssertTrue(app.buttons["AI brush"].waitForExistence(timeout: 5))
+    capture("Offline ride at a new station")
+  }
   func testRideFromWallToPublication() {
     XCTAssertTrue(app.buttons["Choose station"].waitForExistence(timeout: 10))
     sleep(2)

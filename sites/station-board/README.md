@@ -14,7 +14,8 @@ Open http://localhost:8000. No installation or build step is required.
 
 ## Source
 
-- `dist/app.js`: current 3D scene, materials, station label generation, and synchronized interactions.
+- `dist/app.js`: current 3D scene, materials, and synchronized interactions.
+- `dist/board-texture.js`: shared station label painter, wear defaults, and native height-map finish.
 - `dist/index.html`: current page structure and styles.
 - `dist/weathering.js`: seeded procedural dust, scuff clusters, edge cracks, and surface height marks.
 - `dist/stations.json`: compact station names and routes used by the canvas.
@@ -31,3 +32,5 @@ Hosted version: https://station-board-material-study.bruce-6996.chatgpt.site
 ## Procedural wear
 
 The **Procedural wear** side panel controls the overall amount, dust, scratches, cracks, and bumps. **Randomize wear** generates another variation across the collection. Changing **Seed** starts a reproducible pattern; station IDs make each sign unique. Wear stays attached to each sign while panning, zooming, or rotating. Set Amount to zero for clean signs. Bumps and grooves use a height map and respond to lighting.
+
+The iPhone app bundles this collection in its asset catalog. `scripts/export-station-boards.mjs` generates the native images from the same painter and wear defaults, so the boards stay consistent between the canvas and app.

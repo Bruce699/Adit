@@ -1,24 +1,46 @@
 import SwiftUI
 
-enum Station: String, Codable, CaseIterable {
-  case grand = "Grand Central-42 Street Station"
-  case thirty = "33 Street Station"
-  case avenue = "23 Street Station"
-  var short: String {
+struct Station: RawRepresentable, Codable, CaseIterable, Hashable {
+  let rawValue: String
+  init(rawValue: String) { self.rawValue = rawValue }
+  // Preserve existing on-device drafts, which stored these three names as strings.
+  static let grand = Station(rawValue: "Grand Central-42 Street Station")
+  static let thirty = Station(rawValue: "33 Street Station")
+  static let avenue = Station(rawValue: "23 Street Station")
+  init(boardID: String) {
+    let legacy = ["631": Self.grand.rawValue, "632": Self.thirty.rawValue, "634": Self.avenue.rawValue]
+    self.init(rawValue: legacy[boardID] ?? boardID)
+  }
+  var boardID: String {
     switch self {
-    case .grand: "Grand Central"
-    case .thirty: "33 St"
-    case .avenue: "23 St"
+    case .grand: "631"
+    case .thirty: "632"
+    case .avenue: "634"
+    default: rawValue
     }
   }
-  var nextStop: (name: String, from: String, to: String) {
+  var board: StationBoards.Board { StationBoards.byID[boardID] ?? StationBoards.all[0] }
+  var title: String { board.title }
+  var short: String { self == .grand ? "Grand Central" : board.name }
+  static let allCases: [Station] = [.grand, .thirty, .avenue] + StationBoards.all
+    .filter { !["631", "632", "634"].contains($0.id) }.map { Station(boardID: $0.id) }
+  var nextStop: (name: String, from: String, to: String)? {
     switch self {
     case .grand: ("33 St", "631S", "632S")
     case .thirty: ("28 St", "632S", "633S")
     case .avenue: ("14 St–Union Sq", "634S", "635S")
+    default: nil
     }
   }
+  init(from decoder: Decoder) throws {
+    rawValue = try decoder.singleValueContainer().decode(String.self)
+  }
+  func encode(to encoder: Encoder) throws {
+    var container = encoder.singleValueContainer()
+    try container.encode(rawValue)
+  }
 }
+
 struct Campaign: Identifiable {
   let id: String, name: String, variants: [String], count: Int, palette: [String]
   let ratio: Double

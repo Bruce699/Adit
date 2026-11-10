@@ -60,10 +60,9 @@ struct Shell: View {
             Button {
               stationPicker = true
             } label: {
-              Sign(
-                title: store.data.station == .grand
-                  ? "Grand Central-42\nStreet Station" : store.data.station.rawValue)
+              Sign(station: store.data.station)
             }.buttonStyle(.plain).accessibilityLabel("Choose station")
+              .accessibilityValue(store.data.station.title)
               .padding(.horizontal, 15).padding(.top, 14)
             WallView(
               space: space, pulse: stationPulse,
@@ -167,30 +166,43 @@ struct StationSelector: View {
   @EnvironmentObject var store: Store
   @Environment(\.dismiss) var dismiss
   @State private var notice = ""
+  @State private var search = ""
+  private var stations: [Station] {
+    Station.allCases.filter { station in
+      search.isEmpty || "\(station.title) \(station.board.routes.joined(separator: " ")) \(station.board.boroughName) \(station.board.line)"
+        .localizedCaseInsensitiveContains(search)
+    }
+  }
   @AppStorage("liveTrainTimes") private var liveTimes = false
   var body: some View {
     NavigationStack {
       List {
-        Section("6 train") {
-          ForEach(Station.allCases, id: \.self) { s in
+        Section("Station boards · \(Station.allCases.count)") {
+          ForEach(stations, id: \.self) { s in
             Button {
               store.change { $0.station = s }
               dismiss()
             } label: {
               HStack {
-                Circle().fill(Color.transitGreen).frame(width: 12, height: 12)
-                Text(s.rawValue)
+                VStack(alignment: .leading, spacing: 5) {
+                  Image("station-\(s.board.id)").renderingMode(.original).resizable().scaledToFit()
+                    .frame(maxWidth: .infinity)
+                    .accessibilityHidden(true)
+                  Text("\(s.board.boroughName) · \(s.board.line)").font(.caption)
+                    .foregroundStyle(.secondary)
+                }
                 Spacer()
                 if store.data.station == s { Image(systemName: "checkmark") }
               }
-            }
+            }.accessibilityLabel(s.title)
+              .accessibilityValue("\(s.board.boroughName), \(s.board.line), \(s.board.routes.joined(separator: ", "))")
           }
         }
         Section("Train timing") {
           Toggle("Use live 6-train arrivals", isOn: $liveTimes)
           Text(
             liveTimes
-              ? "Requests follow the next southbound train forecast by MTA. A preview ride is available when forecasts are unavailable."
+              ? "Live arrivals are available at Grand Central, 33 Street and 23 Street on the 6. Other boards use a 16-second offline preview."
               : "Use a 16-second preview ride while editing offline."
           ).font(.footnote).foregroundStyle(.secondary)
         }
@@ -201,7 +213,8 @@ struct StationSelector: View {
               ? "Try the original nearby-ad invitation on this device." : notice
           ).font(.footnote).foregroundStyle(.secondary)
         }
-      }.navigationTitle("Stations").toolbar { Button("Done") { dismiss() } }
+      }.searchable(text: $search, prompt: "Station, route or borough")
+        .navigationTitle("Stations").toolbar { Button("Done") { dismiss() } }
     }.tint(.black).presentationDetents([.medium, .large])
   }
   func remind() async {
@@ -242,7 +255,7 @@ struct WallView: View {
     return local.filter { !displayed.contains($0.id) }
   }
   var campaigns: [Campaign] {
-    let offset = Station.allCases.firstIndex(of: store.data.station) ?? 0
+    let offset = (Station.allCases.firstIndex(of: store.data.station) ?? 0) % Campaign.all.count
     return Array(Campaign.all[offset...]) + Array(Campaign.all.prefix(offset))
   }
   var body: some View {
@@ -410,7 +423,7 @@ struct ResultView: View {
   @State private var share: UIImage?
   var body: some View {
     VStack(spacing: 18) {
-      Sign(title: art.station == .grand ? "Grand Central-42\nStreet Station" : art.station.rawValue)
+      Sign(station: art.station)
         .padding(.horizontal, 15).padding(.top, 14)
       HStack {
         Text("\(Campaign.get(art.campaign).name) reframe by \(store.data.handle)").font(.caption)

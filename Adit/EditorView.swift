@@ -209,8 +209,7 @@ struct EditorView: View {
       }
     }
     .task(id: "\(liveTimes)-\(scenePhase)") {
-      guard liveTimes, scenePhase == .active else { return }
-      let stops = art.station.nextStop
+      guard liveTimes, scenePhase == .active, let stops = art.station.nextStop else { return }
       while !Task.isCancelled {
         checkingTrain = true
         do { prediction = try await TrainWindow.load(from: stops.from, to: stops.to) } catch {
@@ -273,9 +272,9 @@ struct EditorView: View {
           .font(.system(size: 9)).foregroundStyle(.secondary)
           Spacer()
         }
-        Text(art.station.nextStop.name).foregroundStyle(.secondary)
+        Text(art.station.nextStop?.name ?? "Preview arrival").foregroundStyle(.secondary)
       }.font(.system(size: 10, weight: .bold))
-    }.accessibilityLabel("Train from \(art.station.short) to \(art.station.nextStop.name)")
+    }.accessibilityLabel("Train from \(art.station.short) to \(art.station.nextStop?.name ?? "Preview arrival")")
   }
   var shelf: some View {
     VStack(alignment: .leading, spacing: 7) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+        1234567890ABCDEF12345671 /* StationBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1234567890ABCDEF12345672 /* StationBoards.swift */; };
 		1F70E8EFB4FDE27C174C4010 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684E718B3967936CAFA6AF8B /* Model.swift */; };
 		24CAD2689F256A77DF525DCF /* AditJourneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3E38565669FDEABB3242F /* AditJourneys.swift */; };
 		2A97D505292D44CFA6D9CC53 /* ArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D4F42609F09264B359E5B /* ArtworkView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+        1234567890ABCDEF12345672 /* StationBoards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationBoards.swift; sourceTree = "<group>"; };
 		583CC2F78E44E39625875749 /* AditUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		684E718B3967936CAFA6AF8B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		997D4F42609F09264B359E5B /* ArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				F21319E2D1FC48DB9251BD29 /* AditApp.swift */,
+                1234567890ABCDEF12345672 /* StationBoards.swift */,
 				997D4F42609F09264B359E5B /* ArtworkView.swift */,
 				9B0A2F64D8D0E9F7B5DA9A90 /* Assets.xcassets */,
 				D037AF4A257AD438ADAF8FA4 /* Community.swift */,
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6232C1B807F90AF69252A2A /* AditApp.swift in Sources */,
+                1234567890ABCDEF12345671 /* StationBoards.swift in Sources */,
 				2A97D505292D44CFA6D9CC53 /* ArtworkView.swift in Sources */,
 				6EA8900282100E701D5B79C1 /* Community.swift in Sources */,
 				B5D647566A329CCEA0982508 /* EditorView.swift in Sources */,
