@@ -16,6 +16,7 @@ Open http://localhost:8000. No installation or build step is required.
 
 - `dist/app.js`: current 3D scene, materials, station label generation, and synchronized interactions.
 - `dist/index.html`: current page structure and styles.
+- `dist/weathering.js`: seeded procedural dust, scuff clusters, edge cracks, and surface height marks.
 - `dist/stations.json`: compact station names and routes used by the canvas.
 - `dist/assets/three.min.js`: bundled Three.js 0.158.0 (MIT license).
 - `dist/SOURCE.md`: MTA data source and retrieval date.
@@ -26,3 +27,7 @@ Open http://localhost:8000. No installation or build step is required.
 Starting settings: horizontal angle 1°, vertical angle 2°, light direction −35°, light height 46°, roughness 62%, texture depth 41%. Open Layer’s side panel provides columns, spacing, background, shared tilt, lighting direction and intensity, roughness, texture depth, metalness, and exposure controls.
 
 Hosted version: https://station-board-material-study.bruce-6996.chatgpt.site
+
+## Procedural wear
+
+The **Procedural wear** side panel controls the overall amount, dust, scratches, cracks, and bumps. **Randomize wear** generates another variation across the collection. Changing **Seed** starts a reproducible pattern; station IDs make each sign unique. Wear stays attached to each sign while panning, zooming, or rotating. Set Amount to zero for clean signs. Bumps and grooves use a height map and respond to lighting.

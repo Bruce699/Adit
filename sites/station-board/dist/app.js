@@ -1,4 +1,5 @@
 import {controls} from './lib/open-layer-controls.js';
+import {weatherBoard} from './weathering.js';
 (async()=>{
 'use strict';
 const composition = controls('Station composition', {
@@ -10,6 +11,12 @@ const surface = controls('Sign materials & lighting', {
  lightDirection: [-35,-180,180,1], lightHeight: [46,5,85,1],
  lightIntensity: [3.8,0,8,.1], roughness: [.62,0,1,.01], textureDepth: [.41,0,1,.01],
  metalness: [.18,0,1,.01], exposure: [1.05,.3,2,.05],
+});
+let wearVariation=0;
+const wear = controls('Procedural wear', {
+ amount: [.7,0,1,.01], dust: [.5,0,1,.01], scratches: [.5,0,1,.01],
+ cracks: [.35,0,1,.01], bumps: [.45,0,1,.01], seed: [24,1,9999,1],
+ randomize: {type:'action',label:'Randomize wear',run:()=>{wearVariation++;clearWear();}},
 });
 // A longer camera distance softens perspective while the projection preserves sign size.
 const s={yaw:1,pitch:2,distance:14};
@@ -35,6 +42,10 @@ const envCanvas=document.createElement('canvas');envCanvas.width=1024;envCanvas.
 
 camera.position.z=s.distance;
 const cache=new Map();
+function disposeTextures(textures){textures.color.dispose();textures.bump.dispose();}
+function clearWear(){for(const textures of cache.values())disposeTextures(textures);cache.clear();schedule();}
+let previousWearSeed=wear.get().seed;
+wear.subscribe(()=>{if(wear.get().seed!==previousWearSeed){wearVariation=0;previousWearSeed=wear.get().seed;}clearWear();});
 const routeColors={1:'#ee352e',2:'#ee352e',3:'#ee352e',4:'#00933c',5:'#00933c',6:'#00933c',7:'#b933ad',A:'#0039a6',C:'#0039a6',E:'#0039a6',B:'#ff6319',D:'#ff6319',F:'#ff6319',M:'#ff6319',G:'#6cbe45',J:'#996633',Z:'#996633',L:'#a7a9ac',N:'#fccc0a',Q:'#fccc0a',R:'#fccc0a',W:'#fccc0a',S:'#808183',SIR:'#0039a6'};
 const base=document.createElement('canvas');base.width=1024;base.height=216;const bx=base.getContext('2d');bx.fillStyle='#222321';bx.fillRect(0,0,1024,216);for(let i=0;i<35000;i++){const v=rand()>.5?255:0;bx.fillStyle=`rgba(${v},${v},${v},${rand()*.025})`;bx.fillRect(rand()*1024,rand()*216,1,1);}bx.fillStyle='#f5f5f0';bx.fillRect(0,24,1024,2);
 function textureFor(st,width){
@@ -50,8 +61,16 @@ function textureFor(st,width){
  while(Math.max(...lines.map(t=>ctx.measureText(t).width))>nameWidth&&font>28){font-=1;ctx.font=`500 ${font}px Arial,Helvetica,sans-serif`;}
  ctx.fillStyle='#f5f5f0';ctx.textBaseline='alphabetic';ctx.fillText(lines[0],24,92.5);ctx.fillText(lines[1],24,157.5);
  services.forEach((route,i)=>{const col=i%cols,row=Math.floor(i/cols);const x=1024-blockWidth/2+(col-(cols-1)/2)*step;const y=107+(row-(rows-1)/2)*step;ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fillStyle=routeColors[route]||'#808183';ctx.fill();ctx.font=`500 ${route==='SIR'?radius*.8:radius*1.45}px Arial,Helvetica,sans-serif`;ctx.fillStyle=['N','Q','R','W'].includes(route)?'#171717':'#fff';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(route,x,y+2);});
- const scaled=document.createElement('canvas');scaled.width=resolution;scaled.height=Math.round(resolution*216/1024);scaled.getContext('2d').drawImage(c,0,0,scaled.width,scaled.height);
- const tex=new THREE.CanvasTexture(scaled);tex.colorSpace=THREE.SRGBColorSpace;tex.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());cache.set(cacheKey,tex);return tex;
+ const heightCanvas=document.createElement('canvas');heightCanvas.width=1024;heightCanvas.height=216;
+ const heightContext=heightCanvas.getContext('2d');heightContext.drawImage(noiseCanvas,0,0,1024,216);
+ weatherBoard(ctx,heightContext,st.id,`${wear.get().seed}:${wearVariation}`,wear.get());
+ function makeTexture(source,color=false){
+  const scaled=document.createElement('canvas');scaled.width=resolution;scaled.height=Math.round(resolution*216/1024);scaled.getContext('2d').drawImage(source,0,0,scaled.width,scaled.height);
+  const texture=new THREE.CanvasTexture(scaled);if(color)texture.colorSpace=THREE.SRGBColorSpace;
+  texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());return texture;
+ }
+ const textures={color:makeTexture(c,true),bump:makeTexture(heightCanvas)};
+ cache.set(cacheKey,textures);return textures;
 }
 const fragment=document.createDocumentFragment();const tiles=stations.map(st=>{const el=document.createElement('div');el.className='board';el.tabIndex=0;el.setAttribute('role','img');el.setAttribute('aria-label',`${st.name}, ${st.routes.join(', ')}. Drag to tilt all boards.`);el.dataset.station=st.id;fragment.append(el);return {el,st};});root.append(fragment);
 document.getElementById('caption').textContent=`${stations.length} station boards`;
@@ -69,7 +88,7 @@ function render(){requested=false;renderer.setScissorTest(false);renderer.clear(
   camera.aspect=aspect;
   camera.fov=THREE.MathUtils.radToDeg(2*Math.atan(tangent*overscan/.88));
   camera.updateProjectionMatrix();
-  face.map=textureFor(st,r.width);
+  const textures=textureFor(st,r.width);face.map=textures.color;face.bumpMap=textures.bump;
   const width=r.width*overscan,height=r.height*overscan;
   const left=r.left-(width-r.width)/2,top=r.top-(height-r.height)/2;
   renderer.setViewport(left,innerHeight-top-height,width,height);
@@ -78,7 +97,7 @@ function render(){requested=false;renderer.setScissorTest(false);renderer.clear(
   renderer.render(scene,camera);
  }
 
- while(cache.size>Math.max(64,visible+8)){const key=cache.keys().next().value;cache.get(key).dispose();cache.delete(key);}
+ while(cache.size>Math.max(64,visible+8)){const key=cache.keys().next().value;disposeTextures(cache.get(key));cache.delete(key);}
  canvas.dataset.yaw=s.yaw;canvas.dataset.pitch=s.pitch;canvas.dataset.visible=visible;
 }
 function updateView(){
