@@ -99,7 +99,18 @@ function applySurface(){
 composition.subscribe(layout);surface.subscribe(applySurface);
 function resize(){renderer.setSize(innerWidth,innerHeight,false);fit();}
 window.addEventListener('resize',resize);
-stage.addEventListener('wheel',e=>{e.preventDefault();zoomAt(view.zoom*Math.exp(-e.deltaY*.0015),e.clientX,e.clientY);},{passive:false});
+// Trackpad pinches arrive as Ctrl+wheel; ordinary scrolling pans on both axes.
+const panSensitivity=1.25, pinchSensitivity=1.15;
+stage.addEventListener('wheel',e=>{
+ e.preventDefault();
+ const unit=e.deltaMode===1?16:e.deltaMode===2?innerHeight:1;
+ if(e.ctrlKey){zoomAt(view.zoom*Math.exp(-e.deltaY*unit*.01*pinchSensitivity),e.clientX,e.clientY);return;}
+ // Shift+wheel also supports horizontal panning with a conventional mouse.
+ const horizontal=e.shiftKey&&e.deltaX===0;
+ view.x-=(horizontal?e.deltaY:e.deltaX)*unit*panSensitivity;
+ view.y-=(horizontal?0:e.deltaY)*unit*panSensitivity;
+ updateView();
+},{passive:false});
 document.getElementById('zoom-in').onclick=()=>zoomAt(view.zoom*1.3);
 document.getElementById('zoom-out').onclick=()=>zoomAt(view.zoom/1.3);
 document.getElementById('fit').onclick=fit;
@@ -115,11 +126,11 @@ stage.addEventListener('pointerdown',e=>{
 stage.addEventListener('pointermove',e=>{
  if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
  if(pinch&&pointers.size===2){const [a,b]=[...pointers.values()],x=(a.x+b.x)/2,y=(a.y+b.y)/2;
- zoomAt(pinch.zoom*Math.hypot(a.x-b.x,a.y-b.y)/Math.max(1,pinch.distance),pinch.x,pinch.y);
- view.x+=x-pinch.x;view.y+=y-pinch.y;pinch.x=x;pinch.y=y;updateView();return;}
+ zoomAt(pinch.zoom*Math.pow(Math.hypot(a.x-b.x,a.y-b.y)/Math.max(1,pinch.distance),pinchSensitivity),pinch.x,pinch.y);
+ view.x+=(x-pinch.x)*panSensitivity;view.y+=(y-pinch.y)*panSensitivity;pinch.x=x;pinch.y=y;updateView();return;}
  if(!drag)return;
  if(drag.tilt){s.yaw=THREE.MathUtils.clamp(drag.yaw+(e.clientX-drag.x)*.28,-75,75);s.pitch=THREE.MathUtils.clamp(drag.pitch+(e.clientY-drag.y)*.28,-65,65);schedule();}
- else{view.x=drag.panX+e.clientX-drag.x;view.y=drag.panY+e.clientY-drag.y;updateView();}
+ else{view.x=drag.panX+(e.clientX-drag.x)*panSensitivity;view.y=drag.panY+(e.clientY-drag.y)*panSensitivity;updateView();}
 });
 function end(e){pointers.delete(e.pointerId);drag=null;pinch=null;}
 stage.addEventListener('pointerup',end);stage.addEventListener('pointercancel',end);stage.addEventListener('lostpointercapture',end);
