@@ -14,8 +14,8 @@ const surface = controls('Sign materials & lighting', {
 });
 let wearVariation=0;
 const wear = controls('Procedural wear', {
- amount: [.7,0,1,.01], dust: [.5,0,1,.01], scratches: [.5,0,1,.01],
- cracks: [.35,0,1,.01], bumps: [.45,0,1,.01], seed: [24,1,9999,1],
+ amount: [1,0,1,.01], dust: [1,0,1,.01], scratches: [.55,0,1,.01],
+ cracks: [.41,0,1,.01], bumps: [.55,0,1,.01], seed: [24,1,9999,1],
  randomize: {type:'action',label:'Randomize wear',run:()=>{wearVariation++;clearWear();}},
 });
 // A longer camera distance softens perspective while the projection preserves sign size.
